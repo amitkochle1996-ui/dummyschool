@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Programs - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #34495e;
+            background-image: url('Images/CR.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            padding: 2.5rem 1rem; 
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(245, 244, 237, 0.92); 
+            z-index: -1;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50; 
+        }
+        .accent-color {
+            color: #3498db; 
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .image-container {
+            border-radius: 0.75rem; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+            overflow: hidden;
+            height: 250px; 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: contain; 
+        }
+        main, header, footer {
+            width: 100%;
+            max-width: none; 
+        }
+    </style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold section-heading mb-2"> <span class="accent-color">Our Academic Programs</span></h1>
+            <p class="text-xl text-gray-600">Nurturing Minds, Inspiring Futures</p>
+        </div>
+    </header>
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12">
+    
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-3 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/el.jpg" alt="Early Years Learning">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-3xl font-bold section-heading mb-6">Early Years Foundation Stage (EYFS)</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Our Early Years Foundation Stage program, encompassing Nursery to Kindergarten, is designed to provide a warm, stimulating, and play-based environment for our youngest learners. We focus on developing foundational skills in literacy, numeracy, and personal, social, and emotional development through engaging activities and guided discovery.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Children are encouraged to explore their curiosity, develop independence, and build a love for learning that will serve as a strong base for their future academic journey. Our dedicated educators create a nurturing atmosphere where every child feels safe, valued, and excited to come to school each day.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/pl.jpg" alt="Primary Classroom">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold section-heading mb-6">Primary School (Grades 1-5)</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    The Primary School curriculum is comprehensive and well-rounded, focusing on building strong academic foundations across core subjects like English, Mathematics, Science, and Social Studies. We integrate inquiry-based learning and hands-on activities to make learning interactive and meaningful.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Beyond academics, we emphasize critical thinking, problem-solving, and collaborative skills. Students participate in various co-curricular activities, including arts, music, and sports, ensuring a balanced development and fostering their individual talents and interests.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/ML.jpg" alt="Middle School Project">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-3xl font-bold section-heading mb-6">Middle School (Grades 6-8)</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    As students transition to Middle School, our curriculum becomes more specialized, encouraging deeper exploration of subjects and fostering independent learning. We challenge students to engage in critical analysis, research, and collaborative projects that prepare them for higher academic demands.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Our educators guide students through this crucial phase, helping them develop strong organizational skills, self-discipline, and a sense of responsibility. We provide a supportive environment that encourages intellectual curiosity and personal growth, preparing them for the rigors of high school.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/higgg" alt="High School Study">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold section-heading mb-6">High School (Grades 9-12)</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    The High School program offers rigorous academic pathways designed to prepare students for success in universities worldwide. Students can choose from a wide range of elective subjects, allowing them to pursue their interests and strengths while fulfilling graduation requirements.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Our comprehensive university guidance counseling ensures that each student receives personalized support in their higher education applications. We foster leadership skills, independent research capabilities, and a global perspective, empowering our graduates to become confident and impactful individuals.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-3xl font-bold section-heading mb-6">Our Innovative Teaching Methodology</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                At Dummy School, we employ a student-centered teaching methodology that emphasizes active learning, critical thinking, and personalized instruction. Our classrooms are dynamic spaces where curiosity is celebrated, and students are encouraged to ask questions, explore ideas, and engage in meaningful discussions.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                We integrate modern educational technologies to enhance learning experiences, and our teachers continuously engage in professional development to stay abreast of the latest pedagogical advancements. This commitment ensures that our students receive a contemporary and effective education that prepares them for future challenges.
+            </p>
+        </section>
+    </main>
+    <footer class="text-left p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

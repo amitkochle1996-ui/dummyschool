@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infrastructure</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+
+       body {
+            font-family: 'Roboto', sans-serif;
+            color: #334155; 
+            background-image: url('Images/front.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9); 
+            z-index: -1;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            color: #0F172A; 
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #0D9488; 
+        }
+        .accent-color {
+            color: #F59E0B;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .image-container {
+            border-radius: 0.75rem; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+            overflow: hidden;
+            height: 350px;
+            width: 100%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+            padding: 2.5rem; 
+        }
+        .facility-item {
+            background-color: #F8FAFC; 
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            border-left: 4px solid #0D9488; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .facility-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-16 sm:h-20 sm:w-20 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold main-heading mb-1">Our <span class="accent-color">Infrastructure</span></h1>
+            <p class="text-lg sm:text-xl text-gray-600">Modern Facilities for Modern Learning</p>
+        </div>
+    </header>
+     <main class="w-full content-card p-8 sm:p-10 lg:p-12 space-y-12">
+              <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/front.jpg" alt="Modern School Building">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-4xl font-bold section-heading mb-6">Modern Campus & Architecture</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Dummy School's campus is a testament to thoughtful design, blending aesthetic appeal with functional spaces that foster an optimal learning environment. Our architecture is modern and spacious, providing ample natural light and ventilation, creating a vibrant atmosphere for students and staff.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    The campus is meticulously maintained, ensuring a clean, safe, and inspiring setting where students feel comfortable to explore, learn, and grow. Every corner of our school is designed to support our holistic educational philosophy.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Advanced Laboratories</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                Our state-of-the-art laboratories are designed to provide hands-on, experiential learning, allowing students to bridge the gap between theoretical knowledge and practical application.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+                <div class="facility-item">
+                    <div class="image-container mb-4">
+                        <img src="Images/phy.jpg" alt="Physics Laboratory">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Physics Lab</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Equipped with modern apparatus for experiments in mechanics, optics, electricity, and more, fostering a deep understanding of physical principles.
+                    </p>
+                </div>
+                <div class="facility-item">
+                    <div class="image-container mb-4">
+                        <img src="Images/chem.jpg" alt="Chemistry Laboratory">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Chemistry Lab</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        A safe and well-ventilated space with all necessary chemicals and equipment for conducting diverse chemical reactions and analyses.
+                    </p>
+                </div>
+                <div class="facility-item">
+                    <div class="image-container mb-4">
+                        <img src="Images/comp.jpg" alt="Computer Laboratory">
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Computer Lab</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Featuring high-speed internet, latest software, and powerful workstations, enabling students to excel in programming, digital design, and research.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/CR.jpg" alt="Smart Classroom with interactive board">
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold section-heading mb-6">Smart Classrooms & Digital Learning</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Every classroom at Dummy School is a modern, interactive learning hub. Equipped with smart boards, projectors, and high-speed internet, these classrooms facilitate dynamic and engaging lessons. Teachers leverage multimedia resources, virtual simulations, and online collaborative tools to enhance the learning experience.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    This integration of technology ensures that students are exposed to diverse learning styles and are well-prepared for the digital demands of the future. It fosters interactive discussions and makes complex concepts easier to grasp.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/fb.jpg" alt="Outdoor sports complex">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-4xl font-bold section-heading mb-6">Expansive Sports Facilities</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    We believe in the holistic development of our students, and our extensive sports facilities play a crucial role. Our campus features a large football ground, cricket nets, basketball courts, volleyball courts, and dedicated areas for athletics.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    These facilities encourage physical fitness, teamwork, and sportsmanship. Students have ample opportunities to participate in various sports, both recreational and competitive, under the guidance of experienced coaches.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/Library.jpg" alt="Modern school library">
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold section-heading mb-6">Library & Resource Center</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Our well-stocked library and modern resource center serve as the intellectual heart of the school. It houses an extensive collection of books, journals, digital resources, and multimedia materials catering to all age groups and academic disciplines.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Designed as a quiet and conducive space for research and reading, the library encourages students to cultivate a love for literature and independent inquiry, supporting their academic pursuits and personal growth.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Other Essential Facilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="facility-item">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Auditorium & Performance Spaces</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        A spacious auditorium equipped with modern sound and lighting systems for school assemblies, cultural events, and performances.
+                    </p>
+                </div>
+                <div class="facility-item">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Cafeteria & Dining Hall</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        A hygienic and comfortable dining space offering nutritious meals and snacks, promoting healthy eating habits among students.
+                    </p>
+                </div>
+                <div class="facility-item">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Medical Bay & Wellness Center</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        A well-equipped medical facility with trained staff to provide immediate first aid and attend to student health needs.
+                    </p>
+                </div>
+                <div class="facility-item">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Transportation Services</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Safe and reliable bus services covering various routes, ensuring convenient commute for students.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+<footer class="text-left p-4 mt-8 text-black font-bold text-sm">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+</body>
+</html>

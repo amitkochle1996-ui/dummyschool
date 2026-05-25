@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Student Dashboard : Modals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #29abe2;
+            --secondary-color: #64b5f6;
+            --bg-color-light: #e3f2fd;
+            --card-bg-light: #ffffff;
+            --text-color-light: #333;
+            --sidebar-bg-light: #1e88e5;
+            --sidebar-text-light: #ffffff;
+            --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+            --border-color: #e0e0e0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color-light);
+            color: var(--text-color-light);
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: auto 1fr;
+            height: 100vh;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .dark-mode {
+            --bg-color-light: #212529;
+            --card-bg-light: #2c313a;
+            --text-color-light: #eceff1;
+            --sidebar-bg-light: #37474f;
+            --sidebar-text-light: #cfd8dc;
+            --border-color: #455a64;
+            --card-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            grid-column: 1 / 3;
+        }
+        aside {
+            background: var(--sidebar-bg-light);
+            color: var(--sidebar-text-light);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar-profile {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .sidebar-profile img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+        .sidebar-profile h2 {
+            font-size: 1.2em;
+            margin: 0;
+        }
+        .sidebar-profile p {
+            font-size: 0.9em;
+            margin: 0;
+            opacity: 0.8;
+        }
+        .sidebar-profile-details {
+            margin-top: 15px;
+            text-align: left;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        .sidebar-profile-details h3 {
+            font-size: 1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .sidebar-menu {
+            flex-grow: 1;
+        }
+        .sidebar-menu a {
+            display: block;
+            color: var(--sidebar-text-light);
+            padding: 12px 15px;
+            text-decoration: none;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .main-content {
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .welcome-message {
+            text-align: center;
+            font-size: 1.5em;
+            color: #64b5f6;
+        }
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s;
+            z-index: 1000;
+        }
+        .modal-container.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: var(--card-bg-light);
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 900px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-container.show .modal-content {
+            transform: scale(1);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .modal-header h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin: 0;
+        }
+        .modal-close-button {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--text-color-light);
+            transition: color 0.2s;
+        }
+        .modal-close-button:hover {
+            color: #ef4444;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        th {
+            background-color: #f0f8ff;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f8fcff;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #1976d2;
+        }
+        .theme-toggle {
+            cursor: pointer;
+            font-size: 20px;
+            color: white;
+            margin-left: 20px;
+        }
+        .header-icons i {
+            margin-left: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <div class="flex items-center gap-4">
+            <i class="fas fa-graduation-cap text-2xl"></i>
+            <h1 class="text-xl font-bold">Student Dashboard</h1>
+        </div>
+        <div class="flex items-center text-lg header-icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-cog"></i>
+            <span class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </span>
+           <button onclick="window.location.href='login.html'" 
+        class="bg-white text-blue-700 font-semibold py-2 px-3 rounded-md text-sm ml-3 hover:bg-gray-200 transition">
+    Sign Out
+</button>
+
+        </div>
+    </header>
+
+    <aside>
+        <div class="sidebar-profile">
+            <img src="https://via.placeholder.com/80/29abe2/ffffff?text=AS" alt="Profile Photo" id="profileImg"/>
+            <h2 class="font-semibold">Amit Sharma</h2>
+            <p>Roll No: 27 | Class: 10-A</p>
+            <input type="file" accept="image/*" class="block w-full text-sm mt-2" onchange="previewPhoto(event)" />
+            <div class="sidebar-profile-details">
+                <h3>Personal Details</h3>
+                <p><strong>Father:</strong> Rajesh Sharma</p>
+                <p><strong>Mother:</strong> Sunita Sharma</p>
+                <p><strong>Contact:</strong> +91-9876543210</p>
+            </div>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" data-modal="homework" class="menu-item"><i class="fas fa-book"></i> Homework</a>
+            <a href="#" data-modal="assignments" class="menu-item"><i class="fas fa-clipboard-list"></i> Assignments</a>
+            <a href="#" data-modal="timetable" class="menu-item"><i class="fas fa-clock"></i> Timetable</a>
+            <a href="#" data-modal="fees" class="menu-item"><i class="fas fa-money-bill-wave"></i> Fees</a>
+            <a href="#" data-modal="library" class="menu-item"><i class="fas fa-book-reader"></i> Library</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <p class="welcome-message">Welcome to your dashboard. Select an option from the menu to get started.</p>
+    </main>
+
+    <div id="modal-container" class="modal-container" onclick="closeModal(event)">
+        <div id="modal-content" class="modal-content" onclick="event.stopPropagation()">
+            </div>
+    </div>
+
+    <div id="modal-data" style="display: none;">
+        <div id="homework-content">
+            <div class="modal-header">
+                <h2>📚 Homework</h2>
+                <button class="modal-close-button">&times;</button>
+            </div>
+            <p>Here is your homework for the week. Click on the file to download.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Topic</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mathematics</td>
+                        <td>Algebraic Expressions</td>
+                        <td>2025-08-15</td>
+                        <td class="text-green-600">Pending</td>
+                        <td><a href="Student/Homework.pdf" class="cta-button">Download</a></td>
+                    </tr>
+                    <tr>
+                        <td>Science</td>
+                        <td>Cell Structure</td>
+                        <td>2025-08-12</td>
+                        <td class="text-green-600">Pending</td>
+                        <td><a href="Student/science.pdf" class="cta-button">Download</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="assignments-content">
+            <div class="modal-header">
+                <h2>📝 Assignments</h2>
+                <button class="modal-close-button">&times;</button>
+            </div>
+            <p>Check your pending and submitted assignments.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Assignment Title</th>
+                        <th>Submission Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>History</td>
+                        <td>Mughal Empire Report</td>
+                        <td>2025-08-20</td>
+                        <td class="text-green-600">Pending</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="timetable-content">
+            <div class="modal-header">
+                <h2 text="center">🕒 Weekly Timetable</h2>
+                <button class="modal-close-button">&times;</button>
+            </div>
+            <p>Your detailed weekly class schedule.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Monday</th>
+                        <th>Tuesday</th>
+                        <th>Wednesday</th>
+                        <th>Thursday</th>
+                        <th>Friday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>08:30 - 09:20</td>
+                        <td>Period 1 (Math)</td>
+                        <td>Period 1 (Science)</td>
+                        <td>Period 1 (English)</td>
+                        <td>Period 1 (History)</td>
+                        <td>Period 1 (Math)</td>
+                    </tr>
+                    <tr>
+                        <td>09:20 - 10:10</td>
+                        <td>Period 2 (Physics)</td>
+                        <td>Period 2 (Chemistry)</td>
+                        <td>Period 2 (Biology)</td>
+                        <td>Period 2 (Hindi)</td>
+                        <td>Period 2 (Physics)</td>
+                    </tr>
+                    <tr>
+                        <td>10:10 - 10:30</td>
+                        <td colspan="5" class="bg-blue-100 text-blue-700 text-center font-semibold">Short Break 1</td>
+                    </tr>
+                    <tr>
+                        <td>10:30 - 11:20</td>
+                        <td>Period 3 (English)</td>
+                        <td>Period 3 (Math)</td>
+                        <td>Period 3 (Social Std.)</td>
+                        <td>Period 3 (Science)</td>
+                        <td>Period 3 (English)</td>
+                    </tr>
+                    <tr>
+                        <td>11:20 - 12:10</td>
+                        <td>Period 4 (Chemistry)</td>
+                        <td>Period 4 (Physics)</td>
+                        <td>Period 4 (Math)</td>
+                        <td>Period 4 (Computer)</td>
+                        <td>Period 4 (Biology)</td>
+                    </tr>
+                    <tr>
+                        <td>12:10 - 12:50</td>
+                        <td colspan="5" class="bg-blue-200 text-blue-800 text-center font-bold">Lunch Break</td>
+                    </tr>
+                    <tr>
+                        <td>12:50 - 13:40</td>
+                        <td>Period 5 (Social Std.)</td>
+                        <td>Period 5 (English)</td>
+                        <td>Period 5 (Physics)</td>
+                        <td>Period 5 (Chemistry)</td>
+                        <td>Period 5 (Social Std.)</td>
+                    </tr>
+                    <tr>
+                        <td>13:40 - 14:30</td>
+                        <td>Period 6 (Hindi)</td>
+                        <td>Period 6 (Computer)</td>
+                        <td>Period 6 (History)</td>
+                        <td>Period 6 (Biology)</td>
+                        <td>Period 6 (Hindi)</td>
+                    </tr>
+                    <tr>
+                        <td>14:30 - 14:50</td>
+                        <td colspan="5" class="bg-blue-100 text-blue-700 text-center font-semibold">Short Break 2</td>
+                    </tr>
+                    <tr>
+                        <td>14:50 - 15:40</td>
+                        <td>Period 7 (Arts/Sports)</td>
+                        <td>Period 7 (Music)</td>
+                        <td>Period 7 (Elective)</td>
+                        <td>Period 7 (Arts/Sports)</td>
+                        <td>Period 7 (Elective)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="fees-content">
+            <div class="modal-header">
+                <h2>💰 Fees</h2>
+                <button class="modal-close-button">&times;</button>
+            </div>
+            <p>View your fee payment status and details.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fee Type</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tuition Fee</td>
+                        <td>₹15,000</td>
+                        <td>2025-09-01</td>
+                        <td class="text-red-600">Unpaid</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="cta-button">Pay Now</a>
+        </div>
+
+        <div id="library-content">
+            <div class="modal-header">
+                <h2>📖 Library</h2>
+                <button class="modal-close-button">&times;</button>
+            </div>
+            <p>Your borrowed books and due dates.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book Title</th>
+                        <th>Author</th>
+                        <th>Borrow Date</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>The Alchemist</td>
+                        <td>Paulo Coelho</td>
+                        <td>2025-07-25</td>
+                        <td>2025-08-25</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.menu-item');
+        const modalContainer = document.getElementById('modal-container');
+        const modalContent = document.getElementById('modal-content');
+        const modalData = document.getElementById('modal-data');
+        const mainContent = document.querySelector('.main-content');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                menuItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                const modalId = this.getAttribute('data-modal');
+                const contentToDisplay = document.getElementById(modalId + '-content').cloneNode(true);
+
+                modalContent.innerHTML = '';
+                modalContent.appendChild(contentToDisplay);
+                modalContainer.classList.add('show');
+                
+                // Add event listener to the close button inside the modal
+                modalContent.querySelector('.modal-close-button').addEventListener('click', closeModal);
+            });
+        });
+
+        function closeModal(e) {
+            if (e.target === modalContainer || e.target.classList.contains('modal-close-button')) {
+                modalContainer.classList.remove('show');
+                menuItems.forEach(i => i.classList.remove('active'));
+            }
+        }
+        
+        // Initial welcome message
+        document.addEventListener('DOMContentLoaded', () => {
+             mainContent.innerHTML = '<p class="welcome-message">Welcome to your dashboard. Select an option from the menu to get started.</p>';
+        });
+
+        function previewPhoto(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                document.getElementById('profileImg').src = reader.result;
+            };
+            if (event.target.files && event.target.files[0]) {
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
+        
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            body.classList.toggle('dark-mode');
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            } else {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            }
+        }
+    </script>
+</body>
+</html>

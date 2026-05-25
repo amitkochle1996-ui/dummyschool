@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-color-admin: #007bff; /* Royal Blue */
+            --secondary-color-admin: #6c757d; /* Grey */
+            --bg-color-admin-light: #f8f9fa;
+            --card-bg-admin-light: #ffffff;
+            --text-color-admin-light: #343a40;
+            --sidebar-bg-admin: #343a40; /* Dark Grey */
+            --sidebar-text-admin: #ffffff;
+            --card-shadow-admin: 0 4px 15px rgba(0, 0, 0, 0.08);
+            --border-color-admin: #e9ecef;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color-admin-light);
+            color: var(--text-color-admin-light);
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 280px 1fr; /* Wider sidebar for admin */
+            grid-template-rows: auto 1fr;
+            height: 100vh;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .dark-mode {
+            --bg-color-admin-light: #212529;
+            --card-bg-admin-light: #2c313a;
+            --text-color-admin-light: #eceff1;
+            --sidebar-bg-admin: #37474f;
+            --sidebar-text-admin: #cfd8dc;
+            --border-color-admin: #455a64;
+            --card-shadow-admin: 0 4px 15px rgba(0, 0, 0, 0.2);
+            --primary-color-admin: #17a2b8; /* Teal for dark mode */
+        }
+        header {
+            background: var(--primary-color-admin);
+            color: white;
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            grid-column: 1 / 3;
+        }
+        aside {
+            background: var(--sidebar-bg-admin);
+            color: var(--sidebar-text-admin);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .sidebar-header {
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .sidebar-header h2 {
+            margin-top: 0;
+            font-size: 1.8em;
+        }
+        .sidebar-menu a {
+            display: block;
+            color: var(--sidebar-text-admin);
+            padding: 12px 15px;
+            text-decoration: none;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            color: var(--primary-color-admin);
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+        .main-content {
+            padding: 30px;
+            overflow-y: auto;
+            background-color: var(--bg-color-admin-light);
+        }
+        .welcome-message {
+            text-align: center;
+            font-size: 1.8em;
+            color: var(--primary-color-admin);
+            padding-top: 50px;
+        }
+        .content-card {
+            background-color: var(--card-bg-admin-light);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow-admin);
+            margin-bottom: 25px;
+        }
+        .content-card h2 {
+            font-size: 1.8em;
+            color: var(--primary-color-admin);
+            border-bottom: 2px solid var(--border-color-admin);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color-admin);
+        }
+        th {
+            background-color: #f0f4f7;
+            color: var(--primary-color-admin);
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f4f6f9;
+        }
+        .action-buttons button {
+            background-color: var(--primary-color-admin);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-right: 8px;
+            transition: background-color 0.2s ease;
+        }
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+        .action-buttons .delete-btn {
+            background-color: #dc3545;
+        }
+        .action-buttons .delete-btn:hover {
+            background-color: #c82333;
+        }
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s;
+            z-index: 1000;
+        }
+        .modal-container.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background-color: var(--card-bg-admin-light);
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-container.show .modal-content {
+            transform: scale(1);
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--border-color-admin);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+        .modal-header h2 {
+            font-size: 1.8em;
+            color: var(--primary-color-admin);
+            margin: 0;
+        }
+        .modal-close-button {
+            background: none;
+            border: none;
+            font-size: 2em;
+            cursor: pointer;
+            color: var(--text-color-admin-light);
+            transition: color 0.2s;
+        }
+        .modal-close-button:hover {
+            color: #ef4444;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text-color-admin-light);
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color-admin);
+            border-radius: 6px;
+            background-color: var(--bg-color-admin-light);
+            color: var(--text-color-admin-light);
+            font-size: 1em;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--primary-color-admin);
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+            outline: none;
+        }
+        .form-actions {
+            margin-top: 25px;
+            text-align: right;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            margin-left: 10px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+        .form-actions .submit-btn {
+            background-color: var(--primary-color-admin);
+            color: white;
+        }
+        .form-actions .submit-btn:hover {
+            background-color: #0056b3;
+        }
+        .form-actions .cancel-btn {
+            background-color: var(--secondary-color-admin);
+            color: white;
+        }
+        .form-actions .cancel-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header>
+        <div class="flex items-center gap-4">
+            <i class="fas fa-user-shield text-2xl"></i>
+            <h1 class="text-xl font-bold">Admin Dashboard</h1>
+        </div>
+        <div class="flex items-center text-lg header-icons">
+            <i class="fas fa-bell"></i>
+            <i class="fas fa-cog"></i>
+            <span class="theme-toggle" onclick="toggleTheme()">
+                <i class="fas fa-sun" id="theme-icon"></i>
+            </span>
+            <button class="bg-white text-blue-700 font-semibold py-2 px-3 rounded-md text-sm ml-3 hover:bg-gray-200 transition">
+                Sign Out
+            </button>
+        </div>
+    </header>
+
+    <aside>
+        <div class="sidebar-header">
+            <i class="fas fa-user-tie text-5xl mb-3"></i>
+            <h2>Admin Panel</h2>
+            <p class="text-sm opacity-80">Welcome, John Doe</p>
+        </div>
+        <nav class="sidebar-menu">
+            <a href="#" data-content="overview" class="menu-item active"><i class="fas fa-chart-line"></i> Dashboard Overview</a>
+            <a href="#" data-content="students" class="menu-item"><i class="fas fa-user-graduate"></i> Manage Students</a>
+            <a href="#" data-content="teachers" class="menu-item"><i class="fas fa-chalkboard-teacher"></i> Manage Teachers</a>
+            <a href="#" data-content="courses" class="menu-item"><i class="fas fa-book-open"></i> Manage Courses</a>
+            <a href="#" data-content="announcements" class="menu-item"><i class="fas fa-bullhorn"></i> Announcements</a>
+            <a href="#" data-content="settings" class="menu-item"><i class="fas fa-cogs"></i> Settings</a>
+        </nav>
+    </aside>
+
+    <main id="main-content" class="main-content">
+        <p class="welcome-message">Select an option from the sidebar to manage the school system.</p>
+    </main>
+
+    <!-- Generic Modal Container for Add/Edit Forms -->
+    <div id="action-modal-container" class="modal-container" onclick="closeActionModal(event)">
+        <div id="action-modal-content" class="modal-content" onclick="event.stopPropagation()">
+            <!-- Modal content will be dynamically loaded here (e.g., Add Student Form) -->
+        </div>
+    </div>
+
+    <script>
+        const menuItems = document.querySelectorAll('.menu-item');
+        const mainContent = document.getElementById('main-content');
+        const actionModalContainer = document.getElementById('action-modal-container');
+        const actionModalContent = document.getElementById('action-modal-content');
+
+        // Function to load content into the main area
+        async function loadContent(contentId) {
+            try {
+                // Remove active class from previous menu item
+                menuItems.forEach(item => item.classList.remove('active'));
+                // Add active class to current menu item
+                document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
+
+                const response = await fetch(`admin_content/${contentId}.html`);
+                if (!response.ok) {
+                    throw new Error(`Could not load admin_content/${contentId}.html`);
+                }
+                const contentHtml = await response.text();
+                mainContent.innerHTML = contentHtml;
+
+                // Attach event listeners for any buttons inside the loaded content (e.g., "Add New Student")
+                mainContent.querySelectorAll('[data-open-modal]').forEach(button => {
+                    button.onclick = () => openActionModal(button.getAttribute('data-open-modal'));
+                });
+
+            } catch (error) {
+                console.error('Error loading admin content:', error);
+                mainContent.innerHTML = `<p class="text-red-500 text-center mt-10">Error loading content: ${error.message}</p>`;
+            }
+        }
+
+        // Function to open the generic action modal
+        async function openActionModal(formType) {
+            try {
+                const response = await fetch(`admin_forms/${formType}.html`);
+                if (!response.ok) {
+                    throw new Error(`Could not load admin_forms/${formType}.html`);
+                }
+                const formHtml = await response.text();
+                actionModalContent.innerHTML = formHtml;
+                actionModalContainer.classList.add('show');
+
+                // Attach event listener to the close button inside the modal
+                actionModalContent.querySelector('.modal-close-button').addEventListener('click', closeActionModal);
+                
+                // Example form submission (replace with actual backend logic)
+                const form = actionModalContent.querySelector('form');
+                if (form) {
+                    form.onsubmit = (e) => {
+                        e.preventDefault();
+                        console.log(`Form ${formType} submitted!`);
+                        // Add your form submission logic here
+                        alert(`Successfully submitted ${formType} form.`); // Use a custom message box in a real app
+                        closeActionModal(e); // Close modal after submission
+                    };
+                }
+
+            } catch (error) {
+                console.error('Error loading form:', error);
+                actionModalContent.innerHTML = `<p class="text-red-500 text-center">Error loading form: ${error.message}</p>`;
+                actionModalContainer.classList.add('show'); // Show modal even on error
+            }
+        }
+
+        // Function to close the generic action modal
+        function closeActionModal(e) {
+            if (e.target === actionModalContainer || e.target.classList.contains('modal-close-button') || e.target.classList.contains('cancel-btn')) {
+                actionModalContainer.classList.remove('show');
+            }
+        }
+
+        // Add event listeners to sidebar menu items
+        menuItems.forEach(item => {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
+                const contentId = this.getAttribute('data-content');
+                loadContent(contentId);
+            });
+        });
+
+        // Initial content load (e.g., Dashboard Overview)
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent('overview'); // Load dashboard overview on initial page load
+            // Theme toggle function from previous dashboard
+            const body = document.body;
+            const themeIcon = document.getElementById('theme-icon');
+            function toggleTheme() {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    themeIcon.classList.remove('fa-sun');
+                    themeIcon.classList.add('fa-moon');
+                } else {
+                    themeIcon.classList.remove('fa-moon');
+                    themeIcon.classList.add('fa-sun');
+                }
+            }
+            window.toggleTheme = toggleTheme; // Make it globally accessible
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Sign Up</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #4A4A4A;
+            background-image: url('Images/signin.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            color: #008080;
+        }
+        .auth-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+        .auth-input:focus {
+            --tw-ring-color: #008080;
+            box-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+        }
+        .auth-button {
+            background: linear-gradient(to right, #008080, #006666);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+        .auth-button:hover {
+            background: linear-gradient(to right, #006666, #004d4d);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .auth-button:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .message-container {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .message-container.success {
+            color: #16a34a; 
+            background-color: #f0fdf4; 
+            border: 1px solid #bbf7d0; 
+        }
+        .message-container.error {
+            color: #ef4444;
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5; 
+        }
+    </style> </head>
+<body class="w-full">
+    <header class="text-center mb-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-16 sm:h-20 sm:w-20 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold main-heading mb-1">Dummy School</h1>
+            <p class="text-lg sm:text-xl text-gray-600">Your Gateway to Education</p>
+        </div>    </header>
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center main-heading mb-8">Create Your Account</h2>
+
+        <form action="signup.php" method="POST" class="space-y-4">
+            <div>
+                <label for="username" class="block text-gray-700 text-sm font-medium mb-2">Username</label>
+                <input type="text" id="username" name="username" class="auth-input" placeholder="Your Name" required>
+            </div>
+            <div>
+                <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                <input type="email" id="email" name="email" class="auth-input" placeholder="you@example.com" required>
+            </div>
+            <div>
+                <label for="password" class="block text-gray-700 text-sm font-medium mb-2">Password</label>
+                <input type="password" id="password" name="password" class="auth-input" placeholder="********" required>
+            </div>
+            <div>
+                <label for="confirmPassword" class="block text-gray-700 text-sm font-medium mb-2">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="auth-input" placeholder="********" required>
+            </div>
+            <div>
+                <label for="userType" class="block text-gray-700 text-sm font-medium mb-2">I am a...</label>
+                <select id="userType" name="userType" class="auth-input" required>
+                    <option value="">Select your role</option>
+                    <option value="admin">Admin</option>
+                    <option value="employee">Employee</option>
+                    <option value="student">Student</option>
+                </select>
+            </div>
+            <div class="text-center pt-4">
+                <button type="submit" class="auth-button">Register Account</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-10">
+            <p class="text-gray-700">Already have an account? <a href="login.html" class="text-blue-600 hover:underline font-semibold">Login Here</a></p>
+        </div>
+    </main>
+
+    <footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Inspiration - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #2C3E50; /* Dark Blue-Gray for main text */
+        background-image: url('Images/front.jpg'); /* Placeholder: Light, warm background */
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Align content from top */
+        min-height: 100vh;
+        padding: 2.5rem 1rem;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.85); /* Soft white overlay for readability */
+        z-index: -1;
+    }
+    .main-heading {
+        font-family: 'Playfair Display', serif;
+        color: #DAA520; /* Goldenrod - a rich gold for main heading */
+    }
+    .section-heading {
+        font-family: 'Playfair Display', serif;
+        color: #2F4F4F; /* Dark Slate Gray - a deep, grounding color for section headings */
+    }
+    .accent-color {
+        color: #4682B4; /* Steel Blue - a strong, inspiring blue accent */
+    }
+    .text-justify {
+        text-align: justify;
+    }
+    .image-container {
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+        overflow: hidden;
+        width: 100%; 
+    }
+    .image-container img {
+        width: 100%;
+        height: auto; 
+        display: block; 
+    }
+    .content-card {
+        background-color: #ffffff;
+        border-radius: 1.5rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+        padding: 2.5rem; 
+    }
+    .pillar-card {
+        background-color: #F8F8F8; 
+        border-radius: 0.75rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+        border-left: 4px solid #DAA520; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-16 sm:h-20 sm:w-20 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold main-heading mb-1">Our <span class="accent-color">Inspiration</span></h1>
+            <p class="text-lg sm:text-xl text-gray-600">The Guiding Principles of Dummy School</p>
+        </div>
+    </header>
+    <main class="w-full content-card p-8 sm:p-10 lg:p-12 space-y-12">
+                <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">What Inspires Us</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                At Dummy School, our educational philosophy is rooted in a profound belief in the transformative power of knowledge and character. We are inspired by the potential within every child to achieve greatness, not just academically, but as compassionate, responsible, and innovative global citizens. Our journey is guided by a commitment to excellence, integrity, and a deep respect for individual differences.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                We draw inspiration from the timeless values of education that emphasize holistic development, critical thinking, and a lifelong pursuit of learning. Our aim is to create an environment where students are encouraged to dream big, work hard, and contribute positively to the world around them.
+            </p>
+        </section>
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Pillars of Our Educational Philosophy</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="pillar-card">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Holistic Development</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Inspired by the belief that true education nurtures mind, body, and spirit, we foster intellectual, emotional, social, and physical growth.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Inquiry & Innovation</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        We inspire curiosity and encourage students to question, explore, and innovate, preparing them to be adaptable and creative problem-solvers.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Community & Empathy</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Our inspiration comes from building a strong, inclusive community where empathy, respect, and collaboration are fundamental values.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Lifelong Learning</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        We aim to instill a passion for continuous learning, empowering students to seek knowledge and grow throughout their lives.
+                    </p>
+                </div>
+                <div class="pillar-card">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-3">Global Citizenship</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Inspired to prepare students for a interconnected world, we foster global awareness, cultural understanding, and responsible citizenship.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/collob.jpg" alt="Students collaborating on a project">
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold section-heading mb-6">Our Vision in Action</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    The inspiration behind Dummy School translates into every aspect of our daily operations. From our meticulously designed curriculum to our vibrant extracurricular activities, every program is crafted to reflect our core values. Our teachers are not just instructors; they are mentors, guiding students to discover their strengths and overcome challenges.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    We see our students as future leaders, innovators, and compassionate individuals, and our educational practices are geared towards nurturing these qualities. The success stories of our alumni are a testament to the enduring impact of our inspiring environment.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section: The Role of Our Community -->
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/PTM.jpg" alt="Diverse school community gathering"> 
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-4xl font-bold section-heading mb-6">The Role of Our Community</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Our inspiration is also deeply rooted in the collaborative spirit of our entire school community – students, parents, faculty, and staff. This collective dedication to learning and growth creates a supportive ecosystem where every individual feels valued and empowered.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Parental involvement, active alumni networks, and strong community partnerships further amplify our mission, ensuring that Dummy School remains a beacon of inspiring education for generations to come.
+                </p>
+            </div>
+        </section>
+        <!-- Section: Looking Towards the Future -->
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Looking Towards the Future</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                As we look to the future, our inspiration continues to grow. We are committed to continuous innovation, adapting our methods to meet the evolving needs of the 21st century while staying true to our foundational principles. We aim to equip our students with the resilience, creativity, and ethical compass needed to navigate a complex world and make a meaningful difference.
+            </p>
+            <p class="leading-relaxed font-bold text-lg text-justify">
+                Dummy School is not just a place of learning; it is a place where dreams are nurtured, potential is realized, and futures are shaped, all driven by an unwavering commitment to our core inspirations.
+            </p>
+        </section>
+    </main>
+    <footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

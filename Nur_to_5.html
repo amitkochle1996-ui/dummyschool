@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nursery to Grade 5 - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif; 
+            color: #475569; 
+            background-image: url('Images/bg.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9); 
+            z-index: -1;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            color: #0F766E; 
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #D97706;
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .image-container {
+            border-radius: 0.75rem; 
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+            overflow: hidden;
+            height: 300px; 
+            width: 100%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+            padding: 2.5rem; 
+        }
+        header, main, footer {
+            width: 100%;
+            max-width: none; 
+        }
+    </style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-16 sm:h-20 sm:w-20 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold main-heading mb-1">Nursery to <span class="text-yellow-500">Grade 5</span></h1>
+            <p class="text-lg sm:text-xl text-gray-600">Laying the Foundations for a Bright Future</p>
+        </div>
+    </header>
+    <main class="w-full content-card p-8 sm:p-10 lg:p-12 space-y-12">
+               <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Early Learning Journey</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                At Dummy School, the journey from Nursery to Grade 5 is a period of immense growth, discovery, and foundational learning. We are committed to providing a nurturing, stimulating, and joyful environment where young minds can flourish. Our curriculum for these crucial years is designed to ignite curiosity, foster creativity, and build strong academic and social-emotional skills.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                We believe in a child-centric approach, recognizing that each student is unique and learns at their own pace. Through engaging activities, interactive lessons, and a supportive community, we prepare our students not just for the next academic level, but for a lifelong love of learning and exploration.
+            </p>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/nuract.jpg" alt="Nursery Classroom Activity">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-3xl font-bold section-heading mb-6">Nursery & Kindergarten: Learning Through Play</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Our Nursery and Kindergarten programs are vibrant spaces where learning comes alive through play. We focus on developing essential motor skills, early literacy, numeracy concepts, and crucial social skills like sharing, cooperation, and empathy. Activities include storytelling, art and craft, music and movement, and outdoor play.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Experienced educators create a warm and secure environment, encouraging children to explore, question, and discover at their own pace. This foundational stage is designed to build confidence and a positive attitude towards school.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/121.jpg" alt="Grade 1-2 Classroom">
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold section-heading mb-6">Grades 1-2: Solidifying Core Skills</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    In Grades 1 and 2, we transition to more structured learning while retaining an element of discovery and hands-on engagement. The curriculum emphasizes solidifying foundational skills in reading, writing, and mathematics. Students delve into environmental studies and basic science concepts through interactive projects.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    We nurture independent learning habits and problem-solving abilities. Co-curricular activities like creative writing, basic coding, and introductory sports are integrated to ensure a balanced development and to keep learning exciting.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/12.jpg" alt="Students engaged in activity">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-3xl font-bold section-heading mb-6">Grades 3-5: Expanding Knowledge & Critical Thinking</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    As students progress to Grades 3, 4, and 5, the curriculum expands to include more complex concepts across all subjects. We encourage deeper inquiry, critical thinking, and collaborative learning through group projects, presentations, and field trips.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Students are introduced to more specialized subjects and are encouraged to develop their research skills. Leadership opportunities, participation in inter-house competitions, and advanced clubs help foster confidence, responsibility, and a sense of community.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Beyond Academics: Holistic Growth</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="image-container">
+                    <img src="Images/12p.jpg" alt="Kids playing sports">
+                </div>
+                <div class="md:col-span-1 lg:col-span-2">
+                    <p class="leading-relaxed text-lg mb-4 text-justify">
+                        Our commitment to holistic development extends beyond the academic curriculum. For our Nursery to Grade 5 students, we offer a rich array of co-curricular activities designed to nurture their talents and interests.
+                    </p>
+                    <ul class="list-disc list-inside leading-relaxed text-lg pl-4 mb-4">
+                        <li class="mb-2"><strong>Sports:</strong> Introduction to various sports like football, basketball, and athletics, focusing on fun and fundamental skills.</li>
+                        <li class="mb-2"><strong>Arts & Crafts:</strong> Engaging workshops in drawing, painting, pottery, and creative crafts.</li>
+                        <li class="mb-2"><strong>Music & Dance:</strong> Opportunities to learn various musical instruments, singing, and different dance forms.</li>
+                        <li class="mb-2"><strong>Clubs:</strong> Fun and educational clubs such as Storytelling Club, Nature Club, and Junior Science Club.</li>
+                    </ul>
+                    <p class="leading-relaxed text-lg text-justify">
+                        These activities help in developing physical coordination, creative expression, social skills, and a well-rounded personality.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Features</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #4B5563; /* Gray 700 - a balanced dark gray for main text */
+            background-image: url(''); /* Placeholder: Light, warm background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content from top */
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85); /* Slightly less opaque white overlay for readability */
+            z-index: -1;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            color: #6D28D9; /* Violet 700 - a rich purple for main heading */
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #9333EA; /* Violet 600 - a slightly lighter purple for section headings */
+        }
+        .accent-color {
+            color: #EC4899; /* Pink 500 - a vibrant pink accent */
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .image-container {
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    overflow: hidden;
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    height: auto; 
+   
+    object-fit: contain; 
+    transition: transform 0.3s ease-in-out; 
+}
+.image-container:hover img {
+    transform: none; 
+}
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem; 
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+            padding: 2.5rem; 
+        }
+        .feature-item {
+            background-color: #FDF2F8; 
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            border-left: 4px solid #EC4899; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-8 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-16 sm:h-20 sm:w-20 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-5xl font-extrabold main-heading mb-1">Our Key <span class="accent-color">Features</span></h1>
+            <p class="text-lg sm:text-xl text-gray-600">Excellence in Every Aspect</p>
+        </div>
+    </header>
+    <main class="w-full content-card p-8 sm:p-10 lg:p-12 space-y-12">
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/mordern.jpg" alt="Teacher interacting with students in a modern classroom">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-4xl font-bold section-heading mb-6">Innovative Teaching Methodologies</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    At Dummy School, we go beyond traditional teaching. Our educators employ modern, student-centric methodologies that encourage active participation, critical thinking, and problem-solving. We integrate project-based learning, inquiry-based approaches, and collaborative activities to make learning engaging and relevant.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    Our focus is on fostering a deep understanding of concepts rather than rote memorization, preparing students to apply their knowledge in real-world scenarios and to become lifelong learners.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/school1.avif" alt="Modern school building and facilities">
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold section-heading mb-6">State-of-the-Art Infrastructure</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Dummy School boasts a world-class infrastructure designed to facilitate comprehensive learning and development. Our campus includes spacious, well-lit classrooms, advanced science and computer laboratories, a comprehensive library, and dedicated spaces for arts and sports.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    We ensure a safe, comfortable, and stimulating environment that supports both academic excellence and extracurricular pursuits, providing students with all the resources they need to thrive.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/Career-Councelling.JPG" alt="Student talking to a counselor">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-4xl font-bold section-heading mb-6">Comprehensive Student Support & Counseling</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    We understand that student well-being is paramount. Our school provides robust student support services, including academic guidance, career counseling, and personal counseling. A team of dedicated counselors and mentors is available to assist students with their academic choices, emotional challenges, and future career paths.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    This holistic support system ensures that every student feels heard, understood, and empowered to overcome challenges and achieve their full potential.
+                </p>
+            </div>
+        </section>
+        <section class="pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="image-container">
+                <img src="Images/prog.jpg" alt="Students engaging in a global exchange program">
+            </div>
+            <div>
+                <h2 class="text-4xl font-bold section-heading mb-6">Global Exposure & International Programs</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify">
+                    Preparing students for a globalized world is a key feature of our education. We offer opportunities for international exchange programs, collaborations with schools abroad, and exposure to diverse cultures through various activities and events.
+                </p>
+                <p class="leading-relaxed text-lg text-justify">
+                    These initiatives broaden students' perspectives, enhance their cross-cultural communication skills, and foster a sense of global citizenship, making them adaptable and empathetic individuals.
+                </p>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Safety, Security & Parent Engagement</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                The safety and security of our students are our utmost priority. Our campus is equipped with 24/7 surveillance, trained security personnel, and strict safety protocols. We maintain a secure environment where students can learn and grow without concern.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div class="feature-item">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-3">Robust Safety Measures</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        Comprehensive security systems, emergency preparedness, and a dedicated team ensure a safe learning environment for all students.
+                    </p>
+                </div>
+                <div class="feature-item">
+                    <h3 class="text-2xl font-semibold text-purple-700 mb-3">Active Parent Engagement</h3>
+                    <p class="text-gray-700 leading-relaxed text-justify">
+                        We believe in a strong partnership with parents. Regular communication, parent-teacher meetings, workshops, and school events foster a collaborative community.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+<footer class="text-left p-4 mt-8 font-bold text-black text-sm">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+

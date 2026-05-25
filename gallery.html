@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery - Dummy School</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f0f4f8;
+        color: #334155;
+        background: linear-gradient(to bottom right, #f0f4f8, #e0e7ee); 
+        background-image: url('Images/images.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+    }
+    .gallery-grid::-webkit-scrollbar {
+        height: 8px;
+    }
+    .gallery-grid::-webkit-scrollbar-track {
+        background: #e2e8f0;
+        border-radius: 10px;
+    }
+    .gallery-grid::-webkit-scrollbar-thumb {
+        background: #94a3b8;
+        border-radius: 10px;
+    }
+    .gallery-grid::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+    }
+    .modal-overlay {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .modal-content {
+        background-color: #ffffff;
+        border-radius: 0.75rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+       <header class="text-center mb-12 flex items-center justify-center">
+        <img src="Images/logor.png" alt="School Logo" class="h-16 w-20 mr-4 sm:h-20 sm:w-20 md:h-24 md:w-24">
+        <div>
+            <h1 class="text-5xl font-extrabold text-blue-800 mb-4">Photo Gallery</h1>
+            <p class="text-xl text-gray-600">Explore moments from Dummy School's activities.</p>
+        </div>
+    </header>
+
+    <div class="w-full max-w-7xl bg-brown-50 shadow-xl rounded-2xl p-6 sm:p-8">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-8">
+            <button class="tab-button bg-blue-600 text-white px-6 py-2 rounded-full font-semibold text-lg hover:bg-blue-700 transition duration-300 shadow-md active-tab" data-category="all">All</button>
+            <button class="tab-button bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300" data-category="indoor_games">Indoor Games</button>
+            <button class="tab-button bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300" data-category="outdoor_games">Outdoor Games</button>
+            <button class="tab-button bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300" data-category="classroom">Classroom</button>
+            <button class="tab-button bg-gray-200 text-gray-700 px-6 py-2 rounded-full font-semibold text-lg hover:bg-gray-300 transition duration-300" data-category="lab">Lab</button>
+        </div>
+        <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <img src="Images/indoor_games/games21.jpg" alt="Indoor Game 1" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/games21.jpg">
+            <img src="Images/indoor_games/ingames1.jpg" alt="Indoor Game 2" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/ingames1.jpg">
+            <img src="Images/indoor_games/ingames2.jpg" alt="Indoor Game 3" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/ingames2.jpg">
+            <img src="Images/indoor_games/ingames3.jpg" alt="Indoor Game 4" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/ingames3.jpg">    
+            <img src="Images/indoor_games/ingames4.jpg" alt="Indoor Game 5" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/ingames4.jpg">
+            <img src="Images/indoor_games/ingames6.jpg" alt="Indoor Game 6" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="indoor_games" data-fullsrc="Images/indoor_games/ingames6.jpg">
+            <img src="Images/outdoor_games/games.jpg" alt="Outdoor Game 1" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games.jpg">
+            <img src="Images/outdoor_games/games2.jpg" alt="Outdoor Game 2" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games2.jpg">
+            <img src="Images/outdoor_games/games3.jpg" alt="Outdoor Game 3" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games3.jpg">
+            <img src="Images/outdoor_games/games4.jpg" alt="Outdoor Game 4" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games4.jpg">
+            <img src="Images/outdoor_games/games5.jpg" alt="Outdoor Game 5" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games5.jpg">
+            <img src="Images/outdoor_games/games6.jpg" alt="Outdoor Game 6" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games6.jpg">
+            <img src="Images/outdoor_games/games7.jpg" alt="Outdoor Game 7" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games7.jpg">
+            <img src="Images/outdoor_games/games8.jpg" alt="Outdoor Game 8" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="outdoor_games" data-fullsrc="Images/outdoor_games/games8.jpg">
+            
+            <img src="Images/classroom/class.jpg" alt="Classroom Study 1" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="classroom" data-fullsrc="Images/classroom/class.jpg">
+            <img src="Images/classroom/class2.jpg" alt="Classroom Study 2" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="classroom" data-fullsrc="Images/classroom/class2.jpg">
+            <img src="Images/classroom/class3.jpg" alt="Classroom Study 3" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="classroom" data-fullsrc="Images/classroom/class3.jpg">
+            <img src="Images/classroom/class4.jpg" alt="Classroom Study 4" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="classroom" data-fullsrc="Images/classroom/class4.jpg">
+            <img src="Images/classroom/class5.jpg" alt="Classroom Study 5" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="classroom" data-fullsrc="Images/classroom/class5.jpg">
+            
+            <img src="Images/lab/chem-lab.jpg" alt="Lab Experiment 1" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="lab" data-fullsrc="Images/lab/chem-lab.jpg">
+            <img src="Images/lab/chem-lab2.jpg" alt="Lab Experiment 2" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="lab" data-fullsrc="Images/lab/chem-lab2.jpg">
+            <img src="Images/lab/science-lab3.jpg" alt="Lab Experiment 3" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="lab" data-fullsrc="Images/lab/science-lab3.jpg">
+            <img src="Images/lab/science-lab5.jpg" alt="Lab Experiment 4" class="gallery-item w-full h-56 object-cover rounded-lg shadow-md cursor-pointer transform hover:scale-105 transition-transform duration-200" data-category="lab" data-fullsrc="Images/lab/science-lab5.jpg">
+            
+        </div>
+    </div>
+    <div id="imageModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 modal-overlay">
+        <div class="modal-content relative max-w-3xl w-full p-6">
+            <button id="closeModal" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-3xl font-bold">&times;</button>
+            <img id="modalImage" src="" alt="Full Size Image" class="max-w-full max-h-[80vh] mx-auto rounded-lg">
+            <div class="text-center mt-4">
+                <a id="downloadButton" href="#" class="bg-blue-600 text-white px-5 py-2 rounded-full inline-flex items-center space-x-2 hover:bg-blue-700 transition duration-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span>Download Image</span>
+                </a>
+            </div>
+        </div>
+    </div>
+<footer class="text-left p-4 mt-8 text-white text-sm">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            const closeModalButton = document.getElementById('closeModal');
+            const downloadButton = document.getElementById('downloadButton');
+
+            // --- Tab Filtering Logic ---
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const category = button.dataset.category;
+                    // Update active tab styling
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active-tab', 'bg-blue-600', 'text-white');
+                        btn.classList.add('bg-gray-200', 'text-gray-700');
+                    });
+                    button.classList.add('active-tab', 'bg-blue-600', 'text-white');
+                    button.classList.remove('bg-gray-200', 'text-gray-700');
+                    // Filter images
+                    galleryItems.forEach(item => {
+                        if (category === 'all' || item.dataset.category === category) {
+                            item.style.display = 'block'; // Show item
+                        } else {
+                            item.style.display = 'none'; // Hide item
+                        }
+                    });
+                });
+            });
+
+            // --- Image Modal Logic ---
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const fullSrc = item.dataset.fullsrc;
+                    const altText = item.alt;
+
+                    modalImage.src = fullSrc;
+                    modalImage.alt = altText;
+                    
+                    // NEW: Download button click handler for reliable download
+                    downloadButton.onclick = () => {
+                        const filename = fullSrc.substring(fullSrc.lastIndexOf('/') + 1);
+                        const tempLink = document.createElement('a');
+                        tempLink.href = fullSrc;
+                        tempLink.download = filename; // Set the download filename
+                        document.body.appendChild(tempLink);
+                        tempLink.click(); // Programmatically click the link
+                        document.body.removeChild(tempLink); // Clean up the temporary link
+                        return false; // Prevent default link behavior
+                    };
+
+                    imageModal.classList.remove('hidden');
+                });
+            });
+
+            // Close modal when close button is clicked
+            closeModalButton.addEventListener('click', () => {
+                imageModal.classList.add('hidden');
+            });
+
+            // Close modal when clicking outside the image (on the overlay)
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    imageModal.classList.add('hidden');
+                }
+            });
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !imageModal.classList.contains('hidden')) {
+                    imageModal.classList.add('hidden');
+                }
+            });
+            // Initial filter: show all images
+            document.querySelector('.tab-button[data-category="all"]').click();
+        });
+    </script>
+</body>
+
+</html>

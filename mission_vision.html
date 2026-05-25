@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mission & Vision - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif; 
+            color: #34495e; 
+            background-image: url('Images/bg2.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85); 
+            z-index: -1;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #4202f3; 
+        }
+        .accent-text {
+            color: #5a36fc; 
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(252, 183, 54, 0.25); 
+        }
+        header, main, footer {
+            width: 100%;
+            max-width: none;
+        }
+        .core-value-heading {
+            color: #85d43b; 
+        }
+    </style>
+</head>
+<body class="w-full">
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold section-heading mb-2">Our <span class="accent-text">Vision</span> & <span class="accent-text">Mission</span></h1>
+            <p class="text-xl text-gray-700">Guiding Principles of Dummy School</p>
+        </div>
+    </header>
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12 space-y-12">
+            <section class="mb-10 pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Vision</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                To cultivate a community of lifelong learners who are innovative, compassionate, and globally aware. We envision our students as future leaders and changemakers, equipped with the knowledge, skills, and integrity to thrive in an ever-evolving world and contribute positively to society.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                We strive to be a beacon of educational excellence, recognized for our progressive pedagogy, inclusive environment, and commitment to nurturing the unique potential of every individual.
+            </p>
+        </section>
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Mission</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                Dummy School is committed to providing a holistic and challenging educational experience that inspires intellectual curiosity, critical thinking, and creativity. We aim to:
+            </p>
+            <ul class="list-disc list-inside leading-relaxed text-lg pl-4 mb-4">
+                <li class="mb-2"><strong>Foster Academic Rigor:</strong> Deliver a comprehensive curriculum that promotes deep understanding and academic mastery across all disciplines.</li>
+                <li class="mb-2"><strong>Nurture Character:</strong> Instill strong ethical values, empathy, and a sense of responsibility, encouraging students to become respectful and principled citizens.</li>
+                <li class="mb-2"><strong>Promote Personal Growth:</strong> Provide diverse co-curricular opportunities that allow students to discover and develop their talents, build resilience, and enhance their well-being.</li>
+                <li class="mb-2"><strong>Cultivate Community:</strong> Create a supportive and inclusive environment where collaboration, mutual respect, and a strong sense of belonging flourish among students, staff, and parents.</li>
+                <li class="mb-2"><strong>Embrace Innovation:</strong> Integrate modern teaching methodologies and technology to prepare students for future challenges and opportunities.</li>
+            </ul>
+            <p class="leading-relaxed text-lg text-justify">
+                Through our mission, we empower students to achieve their full potential and make a meaningful difference in the world.
+            </p>
+        </section>
+    </main>
+    <footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

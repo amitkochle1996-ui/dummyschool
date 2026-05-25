@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+      body {
+            font-family: 'Montserrat', sans-serif;
+            color: #2c3e50;
+            background-image: url('Images/login-candidate.jpg'); /* Placeholder: Replace with your actual image path */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(248, 250, 252, 0.95);
+            z-index: -1;
+        }
+        .form-heading {
+            font-family: 'Playfair Display', serif;
+        }
+        .form-input, .form-textarea, .form-select {
+            width: 100%;
+            padding: 0.75rem; /* p-3 */
+            border: 1px solid #d1d5db; /* border-gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            outline: none; /* focus:outline-none */
+            transition: all 0.2s ease; /* transition duration-200 */
+        }
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            --tw-ring-color: #14b8a6; /* Equivalent to teal-500 */
+            box-shadow: 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color); /* focus:ring-2 */
+        }
+
+        .btn-submit {
+            background: linear-gradient(to right, #1abc9c, #16a085);
+            transition: all 0.3s ease;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(to right, #16a085, #138d75);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        /* FIX: Replaced @apply with direct Tailwind classes */
+        .file-input-label {
+            display: block;
+            width: 100%;
+            background-color: #eff6ff; /* bg-blue-50 */
+            color: #1d4ed8; /* text-blue-700 */
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            border-radius: 0.5rem; /* rounded-lg */
+            cursor: pointer;
+            text-align: center;
+            border: 1px solid #bfdbfe; /* border border-blue-200 */
+            transition: background-color 0.2s ease; /* transition duration-200 */
+        }
+        .file-input-label:hover {
+            background-color: #dbeafe; /* hover:bg-blue-100 */
+        }
+        .file-input-label input[type="file"] {
+            display: none;
+        }
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #e6ffed;
+            border: 1px solid #28a745;
+            color: #1a7e32;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            font-weight: 600;
+        }
+        .message-box button {
+            background-color: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: background-color 0.2s ease;
+        }
+        .message-box button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full max-w-3xl px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold text-blue-900 mb-2 form-heading">Job Application Form</h1>
+            <p class="text-xl text-gray-600">Submit your details to join our team</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Form -->
+    <main class="w-full max-w-3xl bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12">
+        <form id="jobApplicationForm" class="space-y-6">
+            <!-- Personal Information -->
+            <section class="border-b pb-6 mb-6">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 form-heading">Personal Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="fullName" class="block text-gray-700 text-sm font-medium mb-2">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Full Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="example@gmail/hotmail/yahoo/outlook.com" required>
+                    </div>
+                    <div>
+                        <label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-input" placeholder="+91 987654321" required>
+                    </div>
+                    <div>
+                        <label for="place" class="block text-gray-700 text-sm font-medium mb-2">City/Place</label>
+                        <input type="text" id="place" name="place" class="form-input" placeholder="Working Place Address" required>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label for="address" class="block text-gray-700 text-sm font-medium mb-2">Full Address</label>
+                    <textarea id="address" name="address" rows="3" class="form-textarea" placeholder="Full Address, City, State, Pin Code" required></textarea>
+                </div>
+            </section>
+
+            <!-- Identity Documents -->
+            <section class="border-b pb-6 mb-6">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 form-heading">Identity & Documents</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="aadharNumber" class="block text-gray-700 text-sm font-medium mb-2">Aadhar Card Number</label>
+                        <input type="text" id="aadharNumber" name="aadharNumber" class="form-input" placeholder="XXXX XXXX XXXX" pattern="[0-9]{4}[ ]?[0-9]{4}[ ]?[0-9]{4}" title="Please enter a valid 12-digit Aadhar number" required>
+                    </div>
+                    <div>
+                        <label for="aadharCard" class="block text-gray-700 text-sm font-medium mb-2">Upload Aadhar Card (PDF/JPG/PNG)</label>
+                        <label for="aadharCard" class="file-input-label">
+                            <span id="aadharFileName">Choose File</span>
+                            <input type="file" id="aadharCard" name="aadharCard" accept=".pdf,.jpg,.jpeg,.png" required onchange="document.getElementById('aadharFileName').innerText = this.files[0] ? this.files[0].name : 'Choose File'">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="panNumber" class="block text-gray-700 text-sm font-medium mb-2">PAN Card Number</label>
+                        <input type="text" id="panNumber" name="panNumber" class="form-input" placeholder="ABCDE1234F" pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}" title="Please enter a valid 10-character PAN number" required>
+                    </div>
+                    <div>
+                        <label for="panCard" class="block text-gray-700 text-sm font-medium mb-2">Upload PAN Card (PDF/JPG/PNG)</label>
+                        <label for="panCard" class="file-input-label">
+                            <span id="panFileName">Choose File</span>
+                            <input type="file" id="panCard" name="panCard" accept=".pdf,.jpg,.jpeg,.png" required onchange="document.getElementById('panFileName').innerText = this.files[0] ? this.files[0].name : 'Choose File'">
+                        </label>
+                    </div>
+                </div>
+            </section>
+            <!-- Experience & Resume -->
+            <section class="border-b pb-6 mb-6">
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 form-heading">Experience & Resume</h2>
+                <div>
+                    <label for="previousExperience" class="block text-gray-700 text-sm font-medium mb-2">Previous Experience (Optional)</label>
+                    <textarea id="previousExperience" name="previousExperience" rows="4" class="form-textarea" placeholder="Describe your relevant work experience, roles, and responsibilities."></textarea>
+                </div>
+                <div class="mt-6">
+                    <label for="resume" class="block text-gray-700 text-sm font-medium mb-2">Upload Resume (PDF only)</label>
+                    <label for="resume" class="file-input-label">
+                        <span id="resumeFileName">Choose File</span>
+                        <input type="file" id="resume" name="resume" accept=".pdf" required onchange="document.getElementById('resumeFileName').innerText = this.files[0] ? this.files[0].name : 'Choose File'">
+                    </label>
+                </div>
+            </section>
+            <!-- Interview Appointment & Message -->
+            <section>
+                <h2 class="text-3xl font-bold text-blue-800 mb-6 form-heading">Interview & Message</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="interviewDate" class="block text-gray-700 text-sm font-medium mb-2">Preferred Interview Date</label>
+                        <input type="date" id="interviewDate" name="interviewDate" class="form-input" required>
+                    </div>
+                    <div>
+                        <label for="interviewTime" class="block text-gray-700 text-sm font-medium mb-2">Preferred Interview Time</label>
+                        <input type="time" id="interviewTime" name="interviewTime" class="form-input" required>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Message / Cover Letter (Optional)</label>
+                    <textarea id="message" name="message" rows="5" class="form-textarea" placeholder="Tell us why you'd be a great fit for Dummy School."></textarea>
+                </div>
+            </section>
+
+            <!-- Submit Button -->
+            <div class="text-center pt-8">
+                <button type="submit" class="btn-submit text-white px-10 py-4 rounded-full font-bold text-xl shadow-lg inline-flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Submit Application</span>
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- Message Box for Form Submission -->
+    <div id="submissionMessageBox" class="message-box">
+        <p>Thank you for your application! Your information has been submitted.</p>
+        <p class="text-sm mt-2">Please note: This is a demo. Actual submission requires a backend server.</p>
+        <button onclick="document.getElementById('submissionMessageBox').style.display = 'none';" class="mt-4">Close</button>
+    </div>
+
+    <!-- Footer -->
+<footer class="text-left p-4 mt-8 text-black text-sm">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('jobApplicationForm');
+            const messageBox = document.getElementById('submissionMessageBox');
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent actual form submission
+
+                // Basic form validation (you can add more complex validation here)
+                if (!form.checkValidity()) {
+                    form.reportValidity(); // Show browser's default validation messages
+                    return;
+                }
+
+                // Simulate form submission
+                console.log('Form Submitted (Client-side Simulation):');
+                const formData = new FormData(form);
+                for (let [key, value] of formData.entries()) {
+                    if (value instanceof File) {
+                        console.log(`${key}: ${value.name} (${value.size} bytes)`);
+                    } else {
+                        console.log(`${key}: ${value}`);
+                    }
+                }
+                // Display success message
+                messageBox.style.display = 'block';
+
+                // Optionally clear the form after submission
+                form.reset();
+
+                // Reset file input labels
+                document.getElementById('aadharFileName').innerText = 'Choose File';
+                document.getElementById('panFileName').innerText = 'Choose File';
+                document.getElementById('resumeFileName').innerText = 'Choose File';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+

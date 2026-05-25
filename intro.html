@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction of Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="Images/school1.avif" rel="stylesheet">
+  <style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        color: #2C3E50; 
+        background-image: url('Images/front.jpg'); 
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; 
+        min-height: 100vh;
+        padding: 2.5rem 1rem;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.85);
+        z-index: -1;
+    }
+    .main-heading {
+        font-family: 'Playfair Display', serif;
+        color: #DAA520; 
+    }
+    .section-heading {
+        font-family: 'Playfair Display', serif;
+        color: #2F4F4F; 
+    }
+    .accent-color {
+        color: #4682B4; 
+    }
+    .text-justify {
+        text-align: justify;
+    }
+    .image-container {
+        border-radius: 0.75rem; 
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+        overflow: hidden;
+        width: 100%; 
+    }
+    .image-container img {
+        width: 100%;
+        height: auto; 
+        display: block; 
+    }
+    .content-card {
+        background-color: #ffffff;
+        border-radius: 1.5rem; 
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); 
+        padding: 2.5rem; 
+    }
+    .pillar-card {
+        background-color: #F8F8F8;
+                border-radius: 0.75rem;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        padding: 1.5rem;
+        border-left: 4px solid #DAA520; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pillar-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-black">
+
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold section-heading mb-2">Welcome to Dummy School</h1>
+            <p class="text-xl text-center text-gray-700 font-bold">A Place Where Futures Begin</p>
+        </div>
+    </header>
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12 space-y-12">
+        <section class="mb-10 pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Philosophy</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                At Dummy School, we are dedicated to fostering a nurturing and dynamic learning environment where every child feels valued, challenged, and inspired. Our philosophy centers on holistic development, ensuring that students not only achieve academic excellence but also grow into well-rounded individuals with strong moral compasses and a passion for lifelong learning.
+            </p>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                We believe in an educational approach that encourages curiosity, critical thinking, and creativity. Our curriculum is designed to be engaging and relevant, preparing students for the complexities of the modern world while instilling in them a deep appreciation for knowledge and discovery.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                Our dedicated faculty and staff are committed to providing personalized attention, recognizing the unique potential within each student. We strive to create a supportive community where students can explore their interests, develop their talents, and build confidence in a safe and inclusive atmosphere.
+            </p>
+        </section>
+
+        <!-- Section: A Message from Our Principal -->
+        <section class="mb-10 pb-6 border-b border-gray-200 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-1 person-image-container">
+                <img src="Images/principal.jpg" alt="Principal of Dummy School">
+            </div>
+            <div class="lg:col-span-2">
+                <h2 class="text-4xl font-bold section-heading mb-6">A Message from Our Principal</h2>
+                <blockquote class="text-lg leading-relaxed italic border-l-4 pl-4 py-2 mb-4 text-justify">
+                    "Education is not merely about accumulating facts; it is about igniting minds and empowering souls. At Dummy School, we are proud to embark on this incredible journey with our students, guiding them to become compassionate leaders, innovative thinkers, and responsible global citizens. We look forward to welcoming you to our family, where every child's potential is recognized and nurtured."
+                </blockquote>
+                <p class="text-lg font-semibold text-gray-800">- [Principal's Name], Principal, Dummy School</p>
+            </div>
+        </section>
+
+        <!-- Section: A Message from Our Manager -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-1 person-image-container">
+                <img src="Images/manager.jpg" alt="Manager of Dummy School">
+            </div>
+            <div class="lg:col-span-2">
+                <h2 class="text-4xl font-bold section-heading mb-6">A Message from Our Manager</h2>
+                <blockquote class="text-lg leading-relaxed italic border-l-4 pl-4 py-2 mb-4 text-justify">
+                    "At Dummy School, we are committed to providing an environment that supports both academic excellence and holistic growth. Our administrative and operational teams work tirelessly behind the scenes to ensure that our students and faculty have the best resources and facilities available. We believe in creating a seamless and supportive ecosystem where learning flourishes, and every member of our community feels empowered. We are dedicated to maintaining the highest standards of safety, efficiency, and care."
+                </blockquote>
+                <p class="text-lg font-semibold text-gray-800">- [Manager's Name], Manager, Dummy School</p>
+            </div>
+        </section>
+    </main>
+    <footer class="text-left p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dummy School - Contact Us</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<style>
+html, body {
+height: 100%;
+margin: 0;
+overflow-x: hidden; 
+}
+body {
+font-family: 'Montserrat', sans-serif;
+color: #34495e; 
+background-image: url('Images/front.jpg');
+background-size: cover; 
+background-position: center;
+background-attachment: fixed; 
+position: relative; 
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: flex-start;
+min-height: 100vh;
+padding: 2.5rem 1rem;
+}
+body::before {
+content: '';
+position: fixed; 
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(255, 255, 255, 0.85); 
+z-index: -1; 
+}
+section, main, header, footer {
+width: 100%;
+max-width: none; 
+}
+section {
+z-index: 1; 
+position: relative; 
+margin-top: 5vh; 
+margin-bottom: 5vh; 
+}
+input:focus, textarea:focus {
+outline: none;
+box-shadow: 0 0 0 3px rgba(236, 195, 119, 0.5); 
+border-color: #fcb736; 
+}
+.form-container {
+background: rgba(255, 255, 255, 0.95); 
+backdrop-filter: blur(5px); 
+-webkit-backdrop-filter: blur(5px);
+}
+.main-contact-heading {
+font-family: 'Playfair Display', serif;
+color: #4c13e9; 
+font-weight: 800;
+}
+.submit-button {
+background: linear-gradient(to right, #3498db, #2980b9); 
+color: white;
+font-weight: bold;
+padding: 0.75rem 2.5rem; 
+border-radius: 9999px; 
+transition: all 0.3s ease;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.submit-button:hover {
+background: linear-gradient(to right, #2980b9, #21618c);
+transform: translateY(-2px) scale(1.05);
+box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.submit-button:active {
+transform: translateY(0) scale(1);
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.contact-info a {
+color: #f00d0d; 
+}
+</style>
+</head>
+<body class="text-black">
+<section id="contact" class="py-16 md:py-24 w-full rounded-3xl shadow-2xl border border-black p-6 md:p-12 transform hover:scale-[1.005] transition-transform duration-300 ease-in-out">
+<div class="container mx-auto text-center px-6">
+<h2 class="text-4xl md:text-5xl main-contact-heading mb-8 flex items-center justify-center gap-5">
+<svg class="h-10 w-10" viewBox="0 0 24 24" stroke="#e3d946" stroke-width="2"> 
+<path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>
+Get in Touch
+</h2>
+<div class="max-w-3xl mx-auto form-container p-8 rounded-2xl shadow-xl border border-gray-200">
+<p class="text-lg text-gray-700 mb-8 leading-relaxed">
+We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.
+</p>
+<form class="space-y-6" method="POST" action="save_contact.php">
+<div>
+<input type="text" placeholder="Full Name" id="name" name="name" class="w-full p-4 border border-gray-300 rounded-lg transition-all duration-200" required>
+</div>
+<div>
+<input type="email" placeholder="Your Email" id="email" name="email" class="w-full p-4 border border-gray-300 rounded-lg transition-all duration-200" required>
+</div>
+<div>
+<input  
+type="tel"
+placeholder="Phone Number (e.g., 9876543210)"
+id="phone_number"
+name="phone_number"
+class="w-full p-4 border border-gray-300 rounded-lg transition-all duration-200"
+maxlength="10"
+inputmode="numeric"
+required
+oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+>
+</div>
+<div>
+<label for="contact-date" class="block text-sm font-medium text-gray-700 mb-2">Select Date</label>
+<input type="text"id="contact-date"name="contact_date"class="w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500 transition-all duration-200"
+placeholder="Choose a date">
+</div>
+<div>
+<textarea placeholder="Your Message" id="message" name="message" rows="6" class="w-full p-4 border border-gray-300 rounded-lg transition-all duration-200" required></textarea>
+</div>
+<button type="submit" class="submit-button">
+Send Message
+</button>
+</form>
+</div>
+</div>
+</section>
+<div class="text-center mt-8 contact-info">
+<p class="mb-2">If you need to contact the school office, please call us at</p>
+<p class="text-lg font-bold"><a href="tel:+919876543210">+91 9876543210</a></p>
+<p class="mt-4 mb-2">Have a question or concern? Don’t hesitate to send us an email at</p>
+<p class="text-lg font-bold"><a href="mailto:info@dummyschool.com">info@dummyschool.com</a></p>
+</div>
+<footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script>
+flatpickr("#contact-date", {
+dateFormat: "Y-m-d",
+minDate: "1950-01-01",
+maxDate: "2050-12-31",
+defaultDate: "today",
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Dummy School</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<!-- FIX: Changed font import to include Poppins, matching the body style -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+        body {
+            font-family: 'Poppins', sans-serif; /* New font for this page */
+            color: #375f86; /* Dark blue-gray text color */
+            background-image: url('Images/school3.jpg'); /* Placeholder: Replace with your actual image path */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+            display: flex; /* Added for full page layout */
+            flex-direction: column; /* Added for full page layout */
+            align-items: center; /* Added for full page layout */
+            justify-content: flex-start; /* Align content from top */
+            min-height: 100vh; /* Ensure it takes full viewport height */
+            padding: 2.5rem 1rem; /* py-10 px-4 */
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.92); /* Slightly more opaque white overlay */
+            z-index: -1;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #2c3e50; /* Even darker blue-gray for headings */
+        }
+        .accent-text {
+            color: #3B82F6; /* FIX: Changed to a standard blue for accent */
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            /* FIX: Changed shadow color to align with new accent color */
+            box-shadow: 0 12px 25px rgba(59, 130, 246, 0.15);
+        }
+        /* FIX: Adjusted color for core values card headings for consistency */
+        .core-value-heading {
+            color: #1D4ED8; /* Darker blue */
+        }
+</style>
+</head>
+<body class="w-full"> <!-- Body takes full width -->
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4"> <!-- Removed max-w-4xl for full screen -->
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold section-heading mb-2">About <span class="accent-text">Dummy School</span></h1>
+            <p class="text-xl text-gray-600">Our Story, Our Values, Our Community</p>
+        </div>
+    </header>
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12"> <!-- Removed max-w-4xl for full screen -->
+           <section class="mb-10 pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Story</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                Founded in <span class="font-semibold accent-text">19XX</span>, Dummy School began with a vision to create an educational institution that goes beyond traditional academics. Our founders envisioned a place where students are encouraged to think critically, express themselves creatively, and develop a strong sense of community and global responsibility. From humble beginnings, we have grown into a thriving educational hub, consistently adapting to the evolving needs of our students and the world.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                Over the decades, Dummy School has built a legacy of excellence, marked by innovative teaching methodologies, a dedicated faculty, and a vibrant student body. We take pride in our rich history and the countless success stories of our alumni who have gone on to make significant contributions in various fields across the globe.
+            </p>
+        </section>
+        <section class="mb-10 pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Our Core Values</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card">
+                    <h3 class="text-2xl font-semibold core-value-heading mb-3">Integrity</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Upholding honesty, respect, and strong moral principles in all actions and interactions.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card">
+                    <h3 class="text-2xl font-semibold core-value-heading mb-3">Excellence</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Striving for the highest standards in academics, character, and personal development.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card">
+                    <h3 class="text-2xl font-semibold core-value-heading mb-3">Innovation</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Embracing creativity, critical thinking, and new approaches to learning and problem-solving.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card">
+                    <h3 class="text-2xl font-semibold core-value-heading mb-3">Community</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Fostering a supportive, inclusive, and collaborative environment for all members.
+                    </p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-xl shadow-md card">
+                    <h3 class="text-2xl font-semibold core-value-heading mb-3">Compassion</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Promoting empathy, understanding, and a commitment to serving others and the wider world.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">What Makes Us Unique?</h2>
+            <ul class="list-disc list-inside leading-relaxed text-lg pl-4 mb-4">
+                <li class="mb-2"><strong>Holistic Development:</strong> Our balanced approach ensures growth in intellectual, emotional, social, and physical domains.</li>
+                <li class="mb-2"><strong>Experienced Faculty:</strong> A team of passionate educators dedicated to inspiring and guiding students.</li>
+                <li class="mb-2"><strong>Modern Facilities:</strong> State-of-the-art classrooms, labs, sports facilities, and a well-stocked library.</li>
+                <li class="mb-2"><strong>Diverse Programs:</strong> A wide range of academic, co-curricular, and extracurricular activities tailored to various interests.</li>
+                <li class="mb-2"><strong>Global Perspective:</strong> Programs and initiatives designed to foster global awareness and cross-cultural understanding.</li>
+            </ul>
+            <p class="leading-relaxed text-lg mt-6 text-justify">
+                At Dummy School, we are more than just an educational institution; we are a family dedicated to shaping the leaders of tomorrow. We invite you to learn more about our vibrant community and discover the difference a Dummy School education can make.
+            </p>
+        </section>
+    </main>
+    <!-- FIX: Moved footer inside body and adjusted padding for consistency -->
+    <footer class="text-center p-4 mt-8 text-black text-sm font-bold w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

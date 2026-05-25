@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prospectus - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+            scroll-behavior: smooth; 
+            overflow-y: auto; 
+        }
+        html::-webkit-scrollbar {
+            width: 8px;
+        }
+        html::-webkit-scrollbar-track {
+            background: #e2e8f0;
+            border-radius: 10px;
+        }
+        html::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 5px;
+        }
+        html::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-image: url('Images/front.jpg'); 
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            padding: 2.5rem 1rem;
+            overflow-x: hidden; 
+        }
+        body::before {
+            content: '';
+            position: absolute; 
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(240, 244, 248, 0.8); 
+            z-index: -1; 
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #3B82F6, #2563EB);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #2563EB, #1D4ED8);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .btn-primary:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+        .program-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        header, main, footer {
+            width: 100%;
+            max-width: none; 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+
+    <nav class="fixed top-0 left-0 right-0 bg-white bg-opacity-95 shadow-lg z-50 py-4 px-8 flex justify-center items-center">
+        <div class="flex-shrink-0 mr-6">
+            <img src="Images/logor.png" alt="School Logo" class="h-10 w-10 rounded-full">
+        </div>
+        <ul class="flex flex-wrap justify-center space-x-6 text-lg font-medium text-gray-700">
+            <li><a href="welcome.html" class="hover:text-blue-600 transition duration-200">Welcome</a></li>
+            <li><a href="mission_vision.html" class="hover:text-blue-600 transition duration-200">Vision & Mission</a></li>
+            <li><a href="academic.html" class="hover:text-blue-600 transition duration-200">Academics</a></li>
+            <li><a href="beyond.html" class="hover:text-blue-600 transition duration-200">Beyond Classroom</a></li>
+            <li><a href="admission.html" class="hover:text-blue-600 transition duration-200">Admissions</a></li>
+        </ul>
+    </nav>
+
+    <header class="text-center mb-12 mt-20 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4"> 
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold text-blue-800 mb-2 font-['Playfair_Display']">School Prospectus</h1>
+            <p class="text-xl text-gray-700">Discover the Journey of Excellence at Dummy School</p>
+        </div>
+    </header>
+
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-12 lg:p-16"> 
+        
+        <section id="welcome" class="mb-10 pb-6 border-b border-gray-200 reveal-on-scroll">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 font-['Playfair_Display']">Welcome to Dummy School</h2>
+            <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                At Dummy School, we believe in nurturing young minds to become compassionate, confident, and competent individuals ready to face the challenges of the 21st century. Our commitment is to provide a holistic educational experience that balances academic rigor with personal growth and character development.
+            </p>
+            <p class="text-gray-700 leading-relaxed text-lg">
+                This prospectus offers a glimpse into our vibrant school community, our innovative educational approach, and the myriad opportunities we provide for students to excel in all facets of life. We invite you to explore what makes Dummy School a truly special place for learning and discovery.
+            </p>
+        </section>
+
+        <section id="vision-mission" class="mb-10 pb-6 border-b border-gray-200 reveal-on-scroll">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 font-['Playfair_Display']">Our Vision & Mission</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-4 font-['Playfair_Display']">Our Vision</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To inspire a lifelong love of learning and empower every student to achieve their full potential, fostering critical thinking, creativity, and global citizenship. We aim to cultivate future leaders who contribute positively to society.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-semibold text-blue-600 mb-4 font-['Playfair_Display']">Our Mission</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        To provide a safe, inclusive, and stimulating environment where students are encouraged to explore, innovate, and develop a strong sense of responsibility and integrity. We are dedicated to academic excellence and character building.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="mb-10 pb-6 border-b border-gray-200 reveal-on-scroll">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 font-['Playfair_Display']">Academic Programs</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md program-card">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Early Years Foundation Stage (EYFS)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Our EYFS program focuses on play-based learning, fostering curiosity, social skills, and foundational literacy and numeracy in a nurturing environment. We emphasize holistic development.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md program-card">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Primary School (Grades 1-5)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A comprehensive curriculum designed to build strong academic foundations, encourage independent thinking, and develop a passion for discovery across various subjects. Project-based learning is key.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md program-card">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">Middle School (Grades 6-8)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Transitioning to more specialized subjects, students engage in deeper inquiry, collaborative projects, and develop essential research and analytical skills. Critical thinking is paramount.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-xl shadow-md program-card">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">High School (Grades 9-12)</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Rigorous academic pathways preparing students for higher education, with a wide range of elective subjects and career guidance. We ensure readiness for global universities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="beyond-classroom" class="mb-10 pb-6 border-b border-gray-200 reveal-on-scroll">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 font-['Playfair_Display']">Beyond the Classroom</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center program-card p-6 rounded-xl">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mb-4 shadow-inner">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21H3.737a2 2 0 01-1.789-2.894l3.5-7A2 2 0 017.237 10H10m0 0l-3 8m3-8a9 9 0 113-2m0 0l-3 2"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Sports & Athletics</h3>
+                    <p class="text-gray-600">
+                        A wide array of sports, fostering teamwork, discipline, and physical well-being. From football to swimming, we offer something for everyone.
+                    </p>
+                </div>
+                <div class="text-center program-card p-6 rounded-xl">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mb-4 shadow-inner">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6a2 2 0 00-2-2H5a2 2 0 00-2 2v13m11 0V6a2 2 0 012-2h2a2 2 0 012 2v13m-17 0h18a2 2 0 002-2V5a2 2 0 00-2-2H3a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Arts & Culture</h3>
+                    <p class="text-gray-600">
+                        Opportunities in music, drama, visual arts, and dance to unleash creative potential. Our students regularly participate in national competitions.
+                    </p>
+                </div>
+                <div class="text-center program-card p-6 rounded-xl">
+                    <div class="bg-blue-100 p-4 rounded-full inline-block mb-4 shadow-inner">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Clubs & Societies</h3>
+                    <p class="text-gray-600">
+                        Diverse clubs catering to various interests, from robotics to debate and environmental awareness. Students lead many of our successful clubs.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="admissions" class="reveal-on-scroll">
+            <h2 class="text-4xl font-bold text-blue-700 mb-6 font-['Playfair_Display']">Admissions</h2>
+            <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                We welcome applications from students who are eager to learn and grow within a supportive and challenging environment. Our admissions process is designed to be straightforward and transparent.
+            </p>
+            <ul class="list-disc list-inside text-gray-700 leading-relaxed text-lg pl-4">
+                <li class="mb-2"><strong>Application Form:</strong> Complete our online application form, available on our website.</li>
+                <li class="mb-2"><strong>Entrance Assessment:</strong> Students may be required to undertake an age-appropriate assessment to gauge academic readiness.</li>
+                <li class="mb-2"><strong>Interview:</strong> A personal meeting with the admissions team and/or principal to discuss aspirations and fit.</li>
+                <li class="mb-2"><strong>Decision:</strong> Prompt notification of admission status, followed by enrollment procedures.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed text-lg mt-6">
+                For detailed information on admission requirements, important dates, and to download the application form, please visit our official school website or contact our admissions office. We look forward to welcoming you to our family!
+            </p>
+            <div class="mt-8 text-center">
+                <a href="index.html" class="btn-primary text-white px-8 py-4 rounded-full font-bold text-xl shadow-lg inline-flex items-center space-x-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.102 1.101m-.757 4.898l-4 4"></path></svg>
+                    <span>Visit Our Website</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <button id="backToTopBtn" class="fixed bottom-8 right-8 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition duration-300 hidden z-40">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <footer class="text-center p-4 mt-8 text-gray-600 text-sm w-full">
+        <p>&copy; 2025 Dummy School. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) { 
+                    backToTopBtn.classList.remove('hidden');
+                } else {
+                    backToTopBtn.classList.add('hidden');
+                }
+            });
+
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+            const observerOptions = {
+                root: null, 
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" href="Images/logor.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+       body {
+            font-family: 'Poppins', sans-serif;
+            color: #283593; /* Deep Indigo Blue for main text */
+            background-image: url('https://placehold.co/1920x1080/E8EAF6/283593?text=Admissions+Background'); /* Placeholder: A soft blue background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9); /* White overlay */
+            z-index: -1;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #1a237e; /* Darker Indigo Blue for headings */
+        }
+        .accent-color {
+            color: #3f51b5; /* Medium Indigo Blue accent */
+        }
+        .text-justify {
+            text-align: justify;
+        }
+        .info-card {
+            background-color: #e8eaf6; /* Light indigo background for cards */
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        .image-container {
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+            overflow: hidden;
+            height: 300px; /* Consistent height for images */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center py-10 px-4 sm:px-6 lg:px-8">
+
+    <!-- Header Section -->
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start w-full px-4">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 sm:h-24 sm:w-24 mr-0 sm:mr-6 mb-4 sm:mb-0 rounded-full shadow-lg">
+        <div class="text-center sm:text-left">
+            <h1 class="text-5xl font-extrabold section-heading mb-2">Admissions at <span class="accent-color">Dummy School</span></h1>
+            <p class="text-xl text-gray-600">Your Child's Journey Starts Here</p>
+        </div>
+    </header>
+
+    <!-- Main Content Area - Full Screen Width -->
+    <main class="w-full bg-white shadow-2xl rounded-3xl p-8 sm:p-10 lg:p-12 space-y-12">
+        
+        <!-- Section: Welcome to Admissions -->
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Welcome to Our Admissions</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                We are delighted that you are considering Dummy School for your child's education. Our admissions process is designed to be transparent, supportive, and informative, ensuring that prospective families gain a comprehensive understanding of our values, academic programs, and vibrant school community. We welcome applications from students who are eager to learn, grow, and contribute positively to our diverse environment.
+            </p>
+            <p class="leading-relaxed text-lg text-justify">
+                At Dummy School, we believe in creating an inclusive atmosphere where every student can thrive. Our dedicated admissions team is here to guide you through each step, answer your questions, and help you discover how Dummy School can be the perfect fit for your child's educational journey.
+            </p>
+        </section>
+
+        <!-- Section: Admission Process -->
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-8">Our Admission Process</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">1. Inquiry & Prospectus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Begin by exploring our school prospectus and website. You can submit an online inquiry form to receive more information.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">2. Application Form</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Complete and submit the official application form along with all required documents and the application fee.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">3. Entrance Assessment</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Prospective students may undergo an age-appropriate assessment to evaluate their academic readiness.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">4. Interview</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A personal interview with the student and parents/guardians will be scheduled with the admissions committee or principal.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">5. Admission Offer</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Successful candidates will receive an offer of admission.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">6. Enrollment</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Complete the enrollment formalities by submitting necessary fees and final documents to secure the admission.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section: Required Documents -->
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Required Documents</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">For Student</h3>
+                    <ul class="list-disc list-inside text-gray-700 leading-relaxed pl-4">
+                        <li class="mb-2">Birth Certificate (Original for verification, copy for submission)</li>
+                        <li class="mb-2">Previous Academic Records/Report Cards (Last 2-3 years)</li>
+                        <li class="mb-2">Transfer Certificate (TC) from previous school (if applicable)</li>
+                        <li class="mb-2">Passport-sized photographs (recent)</li>
+                        <li class="mb-2">Aadhar Card copy (if applicable)</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">For Parents/Guardians</h3>
+                    <ul class="list-disc list-inside text-gray-700 leading-relaxed pl-4">
+                        <li class="mb-2">Aadhar Card copies</li>
+                        <li class="mb-2">PAN Card copies</li>
+                        <li class="mb-2">Proof of Residence (e.g., utility bill, passport)</li>
+                        <li class="mb-2">Passport-sized photographs</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="leading-relaxed text-lg mt-6 text-justify">
+                Please ensure all documents are complete and accurate to facilitate a smooth admission process. Original documents will be required for verification purposes.
+            </p>
+        </section>
+
+        <!-- Section: Important Dates -->
+        <section class="pb-6 border-b border-gray-200">
+            <h2 class="text-4xl font-bold section-heading mb-6">Important Dates</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Application Period</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Applications for the academic year <span class="font-bold">2026-2027</span> open on <span class="font-bold">October 15, 2025</span> and close on <span class="font-bold">January 31, 2026</span>.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Assessment & Interview Dates</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Assessments and interviews will be conducted from <span class="font-bold">February 15, 2026</span> to <span class="font-bold">March 15, 2026</span>. Specific slots will be communicated upon application submission.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Admission Offer & Enrollment</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Admission offers will be extended by <span class="font-bold">March 31, 2026</span>. Enrollment and fee payment deadline is <span class="font-bold">April 15, 2026</span>.
+                    </p>
+                </div>
+            </div>
+            <p class="leading-relaxed text-lg mt-6 text-justify">
+                We encourage early applications as seats are limited. Please refer to the school calendar for any updates or changes to these dates.
+            </p>
+        </section>
+
+        <!-- Section: Contact Admissions -->
+        <section>
+            <h2 class="text-4xl font-bold section-heading mb-6">Contact Our Admissions Team</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify">
+                Have questions or need further assistance? Our friendly admissions team is here to help you. Feel free to reach out to us during school hours.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Phone</h3>
+                    <p class="text-gray-700 text-lg">+91-987654321-123</p>
+                </div>
+                <div class="info-card">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Email</h3>
+                    <p class="text-gray-700 text-lg">admissions@dummyschool.com</p>
+                </div>
+                <div class="info-card md:col-span-2">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-3">Address</h3>
+                    <p class="text-gray-700 text-lg">Dummy School @ AB Bypass Road, Indore, Madhya Pradesh. – 453771</p>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="mailto:admissions@dummyschool.com" class="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-xl shadow-lg inline-flex items-center space-x-3 hover:bg-blue-700 transition duration-300">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-1 13a2 2 0 01-2 2H4a2 2 0 01-2-2V7a2 2 0 012-2h16a2 2 0 012 2v14z"></path></svg>
+                    <span>Email Us</span>
+                </a>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+ <footer class="text-left p-4 mt-8 text-black text-sm">
+<p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
+
+   

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades 6 to 12 - Dummy School</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="Images/logor.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155; /* Slate 700 */
+            background-color: #f1f5f9; /* Slate 100 */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('Images/school1.avif');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            padding: 0; /* Remove body padding to allow full-width elements */
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.95); /* A slightly more opaque white overlay */
+            z-index: -1;
+        }
+        .main-heading {
+            font-family: 'Playfair Display', serif;
+            color: #0f172a; /* Slate 900 */
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            color: #059669; /* Emerald 600 */
+        }
+        .accent-color {
+            color: #22c55e; /* Emerald 500 */
+        }
+        /* Adjusted content card to use full width with consistent padding */
+        .content-card {
+            background-color: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding-block: 2rem; /* Keep vertical padding */
+            padding-inline: 2rem; /* Consistent horizontal padding for all screen sizes */
+            transition: transform 0.3s ease;
+            width: 100%;
+            max-width: none;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+        .image-container {
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            height: 320px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .image-container:hover {
+            transform: scale(1.02);
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .stream-card {
+            background-color: #ffffff;
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 1.5rem;
+            border-left: 4px solid;
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .stream-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .stream-card.pcm { border-color: #EF4444; } /* Red */
+        .stream-card.pcb { border-color: #22C55E; } /* Green */
+        .stream-card.commerce { border-color: #3B82F6; } /* Blue */
+    </style>
+</head>
+<body class="w-full">
+
+    <header class="text-center mb-12 flex flex-col sm:flex-row items-center sm:items-start justify-start w-full px-4 py-8">
+        <img src="Images/logor.png" alt="School Logo" class="h-20 w-20 mr-0 sm:mr-8 mb-4 sm:mb-0 rounded-full shadow-lg border-2 border-slate-900 transform transition-transform hover:scale-105">
+        <div class="text-center sm:text-left">
+            <h1 class="text-4xl sm:text-6xl font-extrabold main-heading mb-1 leading-tight">Grades <span class="accent-color">6 to 12</span></h1>
+            <p class="text-lg sm:text-2xl text-gray-500 font-medium">Preparing Future Leaders and Innovators</p>
+        </div>
+    </header>
+
+    <main class="w-full space-y-12">
+        <section class="content-card">
+            <h2 class="text-4xl font-bold section-heading mb-6 text-center">The Journey from Middle to High School</h2>
+            <p class="leading-relaxed text-lg mb-4 text-justify text-slate-600">
+                At Dummy School, the academic journey from Grade 6 to Grade 12 is meticulously crafted to empower students with critical thinking, advanced knowledge, and specialized skills. This phase is pivotal in shaping their intellectual capabilities, fostering independence, and preparing them for higher education and future careers.
+            </p>
+            <p class="leading-relaxed text-lg text-justify text-slate-600">
+                Our curriculum is designed to be rigorous yet engaging, encouraging students to delve deeper into subjects, explore their interests, and develop a global perspective. We focus on creating an environment that challenges students academically while providing robust support for their personal and social development.
+            </p>
+        </section>
+
+        <section class="content-card grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="lg:order-2 image-container">
+                <img src="Images/ML.jpg" alt="Middle School Students collaborating">
+            </div>
+            <div class="lg:order-1">
+                <h2 class="text-3xl font-bold section-heading mb-6">Middle School: Building Analytical Skills (Grades 6-8)</h2>
+                <p class="leading-relaxed text-lg mb-4 text-justify text-slate-600">
+                    The Middle School curriculum focuses on strengthening foundational concepts and introducing students to more complex subjects. We emphasize analytical thinking, problem-solving, and effective communication. Students engage in project-based learning, debates, and presentations to enhance their understanding and application of knowledge.
+                </p>
+                <p class="leading-relaxed text-lg text-justify text-slate-600">
+                    This stage is crucial for developing self-discipline and independent study habits, preparing students for the specialized academic pathways of high school. Our educators provide personalized guidance to help students navigate this transitional period successfully.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="text-4xl font-bold section-heading mb-10 text-center">High School: Specialized Streams (Grades 9-12)</h2>
+            <p class="leading-relaxed text-lg mb-8 text-justify text-slate-600">
+                In High School, students choose specialized academic streams, allowing them to focus on subjects aligned with their career aspirations and interests. Our comprehensive programs ensure thorough preparation for competitive examinations and university admissions worldwide.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div class="stream-card pcm">
+                    <h3 class="text-2xl font-semibold text-red-500 mb-3">Science Stream (PCM)</h3>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Focuses on **Physics, Chemistry, and Mathematics**, preparing students for engineering, technology, and pure science fields. Emphasizes logical reasoning and problem-solving.
+                    </p>
+                </div>
+                <div class="stream-card pcb">
+                    <h3 class="text-2xl font-semibold text-green-500 mb-3">Science Stream (PCB)</h3>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Concentrates on **Physics, Chemistry, and Biology**, ideal for students aspiring to careers in medicine, biotechnology, and life sciences. Includes extensive practical work.
+                    </p>
+                </div>
+                <div class="stream-card commerce">
+                    <h3 class="text-2xl font-semibold text-blue-500 mb-3">Commerce Stream</h3>
+                    <p class="text-gray-600 leading-relaxed text-justify">
+                        Covers **Accountancy, Business Studies, Economics, and Mathematics/Informatics Practices**, preparing students for careers in finance, management, and entrepreneurship.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-card">
+            <h2 class="text-4xl font-bold section-heading mb-10 text-center">State-of-the-Art Facilities</h2>
+            <p class="leading-relaxed text-lg mb-8 text-center text-slate-600">
+                Dummy School is equipped with modern infrastructure and cutting-edge facilities to support advanced learning and practical application across all streams.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Advanced Laboratories</h3>
+                    <div class="image-container mb-6">
+                        <img src="Images/phy.jpg" alt="Physics Laboratory">
+                    </div>
+                    <p class="leading-relaxed text-lg mb-4 text-justify text-slate-600">
+                        Our **Physics, Chemistry, and Biology laboratories** are designed to provide hands-on experimental learning. Equipped with the latest apparatus and safety measures, they allow students to conduct experiments, reinforce theoretical concepts, and develop scientific inquiry skills.
+                    </p>
+                    <div class="image-container mb-6">
+                        <img src="Images/chem.jpg" alt="Chemistry Laboratory">
+                    </div>
+                    <p class="leading-relaxed text-lg text-justify text-slate-600">
+                        The **Computer Labs** feature modern workstations with high-speed internet access and up-to-date software, facilitating programming, data analysis, and digital literacy.
+                    </p>
+                    <div class="image-container">
+                        <img src="Images/comp.jpg" alt="Computer Laboratory">
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">Smart Classrooms</h3>
+                    <div class="image-container mb-6">
+                        <img src="Images/CR.jpg" alt="Smart Classroom">
+                    </div>
+                    <p class="leading-relaxed text-lg mb-4 text-justify text-slate-600">
+                        Every classroom from Grade 6 onwards is a **Smart Classroom**, equipped with interactive whiteboards, projectors, and high-speed internet connectivity. This technology enables dynamic presentations, multimedia learning, and access to vast digital resources, making lessons more engaging and effective.
+                    </p>
+                    <p class="leading-relaxed text-lg text-justify text-slate-600">
+                        Smart Classrooms facilitate interactive discussions, virtual field trips, and collaborative projects, transforming traditional teaching into a modern, immersive learning experience. Our teachers are trained to leverage these tools to enhance comprehension and critical thinking.
+                    </p>
+                    <div class="image-container">
+                        <img src="Images/higgg" alt="Interactive Learning">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-left p-4 mt-12 text-slate-600 text-sm font-medium w-full">
+        <p>&copy; 2025 Dummy School. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

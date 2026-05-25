@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="Images/logor.png" type="image/png">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'/>
+<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 2000px 500px }
+           .social-links {
+            display: flex;
+            align-items: right;
+            gap: 15px; 
+        }
+        .social-links img {
+            height: 22px; 
+            width: 22px;
+            transition: transform 0.1s;
+        }
+        .social-links img:hover {
+            transform: scale(1.5); 
+        }
+        .slider {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+    position: relative;
+}
+.slides {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+.slides {
+    display: flex;
+    animation: slide-show 15s infinite; 
+}
+
+.slides img {
+    width: 100%;
+    flex-shrink: 0; 
+}
+@keyframes slide-show {
+   25% { transform: translateX(-100%); } 
+   50% { transform: translateX(-200%); } 
+   75% { transform: translateX(-300%); } 
+   95% { transform: translateX(-300%); }
+   100% { transform: translateX(0%); } 
+}
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  background-color: rgba(239, 7, 7, 0.5); 
+  user-select: none;
+}
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+.mobile-header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+.logo-center {
+  flex: 5;
+  text-align: center;
+}
+.logo-center img {
+  max-height: 60px;
+  width: auto;
+}
+.menu-toggle {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 2px;
+}
+.search-icon {
+  font-size: 18px;
+  color: #333;
+}
+.mobile-nav {
+  display: none;
+  background-color: #f9f9f9;
+  padding: 10px 20px;
+}
+.mobile-nav ul {
+  list-style: none;
+}
+.mobile-nav ul li {
+  margin: 10px 0;
+}
+.mobile-nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+.sub-menu {
+  margin-left: 15px;
+}
+.sub-menu li a {
+  font-weight: normal;
+  font-size: 14px;
+}
+.mobile-nav.active {
+  display: block;
+}
+</style>
+<script src="buttons.js"></script>
+<script>
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    document.getElementById("mobile-nav").classList.toggle("active");
+  });</script>
+<title>Dummy School Website</title>
+<meta name="description" content="Discover the best school in indore for bestest education. Explore top-rated institutions offering excellence in academics and extracurricularActivities where students Enjoy Every Moments." />
+<link rel="canonical" href="index.html" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Dummy School Website- Website by AK" />
+<meta property="og:description" content="Discover the best school in indore for bestest education. Explore top-rated institutions offering excellence in academics and extracurricularActivities where students Enjoy Every Moments." />
+<meta property="og:url" content="index.html" />
+<meta property="og:site_name" content="Dummy School" />
+<meta property="article:modified_time" content="2025-08-05 T 14:12:23+00:00"/>
+<meta property="og:image" content="Images/front.jpg" />
+<meta property="og:image:width" content="2560" />
+<meta property="og:image:height" content="1440" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel='stylesheet' id='godaddy-styles-css' href='https://ehws.edu.in/wp-content/mu-plugins/vendor/wpex/godaddy-launch/includes/Dependencies/GoDaddy/Styles/build/latest.css?ver=2.0.2' type='text/css' media='all' />
+<link rel='stylesheet' id='popup-maker-site-css' href='//ehws.edu.in/wp-content/uploads/pum/pum-site-styles.css?generated=1748657467&#038;ver=1.20.5' type='text/css' media='all' />
+<link rel='stylesheet' id='kingster-style-core-css' href='https://ehws.edu.in/wp-content/themes/kingster/css/style-core.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='kingster-custom-style-css' href='https://ehws.edu.in/wp-content/uploads/kingster-style-custom.css?1741152174&#038;ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='kingster-learnpress-css' href='https://ehws.edu.in/wp-content/themes/kingster/learnpress/kingster-learnpress.css?ver=6.8.2' type='text/css' media='all' />
+<link rel='stylesheet' id='kingster-learnpress-pb-css' href='https://ehws.edu.in/wp-content/themes/kingster/learnpress/kingster-learnpress-pb.css?ver=6.8.2' type='text/css' media='all' />
+<script type="text/javascript" src="https://ehws.edu.in/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-content/plugins/awesome-logos/js/awesome.logos.js?ver=1" id="wps-logos-js-js"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-content/themes/kingster/learnpress/kingster-learnpress.js?ver=6.8.2" id="kingster-learnpress-js"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-content/plugins/awesome-logos/js/awesome.logos.js?ver=1" id="wps-logos-js-js"></script>
+<script src="https://cdn.tailwindcss.com">
+</script>
+<meta name="generator" content="Site Kit by Google 1.157.0" />
+<meta name="google-site-verification" content="HE2hZAKrZ6ug_YAvtNq9hGt8WFQNoQ_nyhewn07Ei1g" />	
+</head>
+<body class="home wp-singular page-template-default page page-id-6208 wp-theme-kingster gdlr-core-body tribe-no-js kingster-body kingster-body-front kingster-full  kingster-with-sticky-navigation  kingster-sticky-navigation-no-logo  kingster-blockquote-style-1 gdlr-core-link-to-lightbox elementor-default elementor-kit-12385">
+<header class="mobile-header">
+  <div class="header-container">
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="logo-center">
+      <a href="index.html">
+        <img src="Images/logorw.png" alt="School Logo">
+      </a>
+    <div class="search-icon">
+      <i class="fa fa-search"></i>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <ul>
+      <li><a href="mission_vision.html"><strong>Mission & Vision</strong></a></li>
+      <li>
+        <a href="aboutus.html" class="sf-with-ul-pre sf-with-ul">About Us</a>
+        <ul class="sub-menu">
+          <li><a href="inspiration.html">Our Inspiration</a></li>
+          <li><a href="intro.html">Introduction</a></li>
+          <li><a href="feature.html">Silent Features</a></li>
+        </ul>      </li>      <li>
+        <a href="Infrastructure.html"><strong>Infrastructure</strong></a>
+        <ul class="sub-menu">
+          <li><a href="academic.html">Academic</a></li>
+          <li><a href="sports.html">Sports</a></li>
+          <li><a href="activity.html">Co-curricular</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="admission.html"><strong>Admissions</strong></a>
+        <ul class="sub-menu">
+          <li><a href="Nur_to_5.html">Nursery to Class 5</a></li>
+          <li><a href="6_to_12.html">VI to XII</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html"><strong>Contact Us</strong></a></li>
+      <li><a href="signup.html"><strong>Sign Up</strong></a></li>
+      <li><a href="login.html"><strong>Log In</strong></a></li>
+    </ul></nav>
+  </div>
+<div class="kingster-body-wrapper kingster-with-frame">
+<div class="kingster-top-bar" >
+<div class="kingster-top-bar-container kingster-container " >
+<div class="kingster-top-bar-container-inner" >
+<span style="color: #000000; margin-right: 35px;"><a href="mailto:info@dummyschool.com">Email: info@dummyschool.com</a></span>
+<span style="color: #000506; margin-right: 35px;"><a href="tel:987654321-123">Phone: +91 987654321-123</a> </span>
+<div class="social-links">
+        <a href="https://www.facebook.com" target="_blank">
+        <img src="Images/social/facebook.png" alt="Facebook">
+        <a href="https://www.instagram.com" target="_blank">
+        <img src="Images/social/instagram.png" alt="Instagram">
+        <a href="https://www.twitter.com" target="_blank">
+        <img src="Images/social/twitter.png" alt="Youtube">
+        <a href="https://www.youtube.com" target="_blank">
+        <img src="Images/social/youtube.png" alt="Twitter">
+        </a></a></a>
+    </div></div></div></div></div>
+<a href="https://www.facebook.com" target="_blank" class="kingster-top-bar-social-icon" title="facebook" ><i class="fa fa-facebook" ></i></a><a href="https://www.linkedin.com/" target="_blank" class="kingster-top-bar-social-icon" title="linkedin" ><i class="fa fa-linkedin" ></i></a><a href="https://www.instagram.com/" target="_blank" class="kingster-top-bar-social-icon" title="instagram" ><i class="fa fa-instagram" ></i></a></div></div></div></div></div>	
+<header class="kingster-header-wrap kingster-header-style-plain  kingster-style-splitted-menu kingster-sticky-navigation kingster-style-slide clearfix" data-navigation-offset="75px">
+<div class="kingster-header-background" ></div>
+<div class="kingster-header-container  kingster-header-custom-container">
+<div class="kingster-header-container-inner clearfix">
+<div class="kingster-navigation kingster-item-pdlr clearfix " >
+<div class="kingster-main-menu" id="kingster-main-menu" >
+<ul id="menu-main-menu-1" class="sf-menu">
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6532 kingster-normal-menu">
+<a href="aboutus.html" class="sf-with-ul-pre">About Us</a>
+<ul class="sub-menu">
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6541" data-size="60"><a href="inspiration.html">Our Inspiration</a></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6542" data-size="60"><a href="intro.html">Introduction</a></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6543" data-size="60"><a href="feature.html">Salient Features</a></li>
+</ul></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6545 kingster-normal-menu"><a href="Infrastructure.html" class="sf-with-ul-pre">Infrastructure</a>
+<ul class="sub-menu">
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6533" data-size="60"><a href="academic.html">Academic</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19137" data-size="60"><a href="sports.html">Sports</a></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6534" data-size="60"><a href="activity.html">Co-curricular</a></li>
+</ul></li>
+<li  class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-6536 kingster-normal-menu"><a href="admission.html" class="sf-with-ul-pre">Admissions</a>
+<ul class="sub-menu">
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6843" data-size="60"><a href="Nur_to_5.html">NURSERY to Clsas 5</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-9491" data-size="60"><a href="6_to_12.html">VI TO XII</a></li>
+</ul></li>
+<li class="kingster-center-nav-menu-item" ><div class="kingster-logo  kingster-item-pdlr"><div class="kingster-logo-inner"><a class="" href="index.html" >
+<img src="Images/logor.png" alt="" width="1691" height="1467" title="WHITE (PNG)" /></a></div></div></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13283 kingster-normal-menu">
+<a href="mission_vision.html">Mission & Vision</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6449 kingster-normal-menu"><a href="contact.html">Contact Us</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6449 kingster-normal-menu"><a href="signup.html">Sign up</a></li>
+<li  class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6449 kingster-normal-menu"><a href="login.html">Log in</a></li>
+</ul></div><div class="kingster-main-menu-right-wrap clearfix  kingster-item-mglr kingster-navigation-top" >
+<div class="kingster-main-menu-search" id="kingster-top-search" ><i class="icon_search" ></i></div><div class="kingster-top-search-wrap" >
+<div class="kingster-top-search-close" ></div>
+<div class="kingster-top-search-row">
+<div class="kingster-top-search-cell">
+<form role="search" method="get" class="search-form" action="index.html">
+<div class="sticky-icon-right">
+</form></div></div></div></div></div></div></div></header></div>
+<div class="slider">
+    <div class="slides active-slides">
+        
+        <img src="Images/front.jpg" alt="School image 1">
+        <img src="Images/12.jpg" alt="School image 2">
+        <img src="Images/Library.jpg" alt="School image 3">
+        <img src="Images/PTM.jpg" alt="School image 4">
+        <img src="Images/Career-Councelling.JPG" alt="School image 6">
+</div><div>
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a></div></div>
+<div class="kingster-page-title-content kingster-item-pdlr" style="padding-top: 0px ;padding-bottom: 0px ;"  >
+<div class="kingster-page-caption" style="font-size:  30px ;font-weight: 400 ;letter-spacing: 1.3px ;color: #0d0d0d ; text-align: center;">WELCOME TO</div>
+<h1 class="kingster-page-title" style="font-size: 90px ;font-weight: 500 ;text-transform: uppercase ;letter-spacing: 1.3px ;text-align: center;">Dummy School</h1>
+<div class="kingster-page-caption" style="font-size: 30px ;font-weight: 400 ;letter-spacing: 1.3px ;color: #0e0000 ; text-align: center;">Where Learning Begins and Futures Are Built</div></div></div></div>	
+<div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first gdlr-core-hide-in-mobile"  id="gdlr-core-column-1" style="z-index: 9 ;" >
+<div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "><div class="gdlr-core-pbf-element" ><div class="gdlr-core-space-item gdlr-core-item-pdlr " style="padding-top: 50px ;"  ></div></div></div></div></div><div class="gdlr-core-pbf-column gdlr-core-column-60 gdlr-core-column-first"  id="gdlr-core-column-2" >
+<div class="gdlr-core-pbf-column-content-margin gdlr-core-js " style="padding: 0px 0px 80px 0px;"   ><div class="gdlr-core-pbf-background-wrap"  ></div>
+<div class="gdlr-core-pbf-column-content clearfix gdlr-core-js "   ><div class="gdlr-core-pbf-element">
+<div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-center-align">
+<div class="gdlr-core-text-box-item-content" style="text-transform: none ;">
+<p style="text-align: center;"><span lang="EN-SG">The Dummy School is a co-educational School in Indore, Madhya Pradesh, India.</span></p>
+<p style="text-align: justify;"><span lang="EN-SG">At Dummy School, we believe that education is more than just academics — it’s about nurturing young minds, building character, and inspiring lifelong curiosity. </span></p>
+<p style="text-align: center;"><span lang="EN-SG">Our school is a vibrant and inclusive community where students are encouraged to explore their potential, embrace creativity, and grow with confidence. With dedicated educators, innovative learning environments, and a commitment to excellence, Dummy School is a place where every child feels valued, supported, and ready to achieve greatness.</span></p>
+</div></div></div></div></div></div></div></div>
+<div class="gdlr-core-pbf-wrapper " style="padding: 0px 0px 100px 0px;"  id="gdlr-core-wrapper-1" >
+</div></div></div></div></div></div></div></div>
+<p>Dummy School @ A.B. Bypass Road, Indore, Madhya Pradesh. - 453771</p>
+<p><a href="info@dummyschool.com"><span style="font-weight: 400;">info@dummyschool.com</span></a><br />
++91 987654321-123</p></div>
+</div></div>
+
+<div class="kingster-footer-column kingster-item-pdlr kingster-column-20">
+    <div id="gdlr-core-custom-menu-widget-2" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+        <div class="menu-footer-1-container">
+            <ul id="menu-footer-1" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19244 kingster-normal-menu">
+                    <a href="index.html">
+                        <img decoding="async" class="alignnone wp-image-19085 size-thumbnail" src="Images/logorw.png" alt="home" width="120" height="120" sizes="(max-width: 150px) 100vw, 150px">
+                    </a>
+                </li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19121 kingster-normal-menu"><a href="School Fee Structure.pdf">Fee Structure 2025-26</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-19319 kingster-normal-menu"><a href="news.pdf">Newsletters</a></li>
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-20690 kingster-normal-menu"><a href="Important_Documents_Admission.pdf">Document</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+    <div id="gdlr-core-custom-menu-widget-6" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+        <div class="menu-footer-2-container">
+            <ul id="menu-footer-2" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5000 kingster-normal-menu"><a href="gallery.html">Photo Gallery</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6463 kingster-normal-menu"><a href="https://icograms.com/usage-school-maps">School Map</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20071 kingster-normal-menu"><a href="Booklist.pdf">Book List 2025-26</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20507 kingster-normal-menu"><a href="uniform.html">Uniform</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="kingster-footer-column kingster-item-pdlr kingster-column-15">
+    <div id="gdlr-core-custom-menu-widget-3" class="widget widget_gdlr-core-custom-menu-widget kingster-widget">
+        <div class="menu-footer-3-container">
+            <ul id="menu-footer-3" class="gdlr-core-custom-menu-widget gdlr-core-menu-style-plain">
+                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6472 kingster-normal-menu">
+                    <a href="contact.html">Contact Us</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6468 kingster-normal-menu"><a href="PRIVACY POLICY.pdf">Privacy Policy</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6469 kingster-normal-menu"><a href="Payment-Policy.pdf">Payment Policy</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-6470 kingster-normal-menu"><a href="FEE-REFUND-POLICY.pdf">Fee Refund Policy</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-16229 kingster-normal-menu"><a target="_blank" href="https://edunexttechnologies.com/portal-help.php">EduNext Mobile App Guide Link</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-20701 kingster-normal-menu"><a href="https://chalo.com/indore">Live Bus Tracking</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="kingster-copyright-wrapper">
+    <div class="kingster-copyright-container kingster-container clearfix">
+        <div class="kingster-copyright-right font-bold kingster-item-pdlr">
+            Copyright © 2025 Dummy Schools
+        </div>
+    </div>
+</div><div class="kingster-copyright-right kingster-item-pdlr"><span class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align gdlr-direction-horizontal" style="padding-bottom: 0px ;display: block ;"  ><a href="https://www.facebook.com/" target="_blank" class="gdlr-core-social-network-icon" title="facebook"  ><i class="fa fa-facebook" ></i></a><a href="https://www.linkedin.com" target="_blank" class="gdlr-core-social-network-icon" title="linkedin"  ><i class="fa fa-linkedin" ></i></a><a href="https://www.instagram.com/" target="_blank" class="gdlr-core-social-network-icon" title="instagram"  ><i class="fa fa-instagram" ></i></a></span></div></div></div></footer></div></div>
+<script> 
+const lazyloadRunObserver = () => {
+const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+entries.forEach( ( entry ) => {
+if ( entry.isIntersecting ) {
+let lazyloadBackground = entry.target;
+if( lazyloadBackground ) {
+lazyloadBackground.classList.add( 'e-lazyloaded' );
+}
+lazyloadBackgroundObserver.unobserve( entry.target );
+}});
+}, { rootMargin: '200px 0px 200px 0px' } );
+lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+lazyloadBackgroundObserver.observe( lazyloadBackground );
+} );};
+const events = [
+'DOMContentLoaded',
+'elementor/lazyload/observe',];</script></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-content/plugins/popup-maker/assets/js/vendor/mobile-detect.min.js?ver=1.3.3" id="mobile-detect-js"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-includes/js/jquery/ui/effect.min.js?ver=1.13.3" id="jquery-effects-core-js"></script>
+<script type="text/javascript" id="kingster-script-core-js-extra"></script>
+<script type="text/javascript" src="https://ehws.edu.in/wp-content/themes/kingster/js/script-core.js?ver=1.0.0" id="kingster-script-core-js"></script>
+<script type="text/javascript"></script> 
+</body>
+</html>
